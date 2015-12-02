@@ -20,7 +20,18 @@ public class EstudianteControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "";
+			sql = "INSERT INTO estudiante(nombre,fechanacimiento, carrera, email, ciudadOrigen) "
+					+ "VALUES ('" + estudiante.getNombre() + "',('"
+					+ estudiante.getFechaNacimiento().getYear() + "-"
+					+ estudiante.getFechaNacimiento().getMonth() + "-"
+					+ estudiante.getFechaNacimiento().getDay() + " "
+					+ 00 + ":"
+					+ 00 + ":"
+					+ 00 + "'),'"
+					+ estudiante.getCarrera() + "','"
+					+ estudiante.getEmail() + "','"
+					+ estudiante.getCiudadOrigen() + "')"
+					;
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();

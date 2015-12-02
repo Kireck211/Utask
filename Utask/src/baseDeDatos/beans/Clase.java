@@ -7,10 +7,10 @@ import planeacion.Examen;
 import planeacion.Profesor;
 
 public class Clase {
+	
 	private String nombre;
 	private Vector<Profesor> profesores;
 	private MyDateTime inicio;
-
 	private MyDateTime fin;
 	private Repetir repeticion;
 	private boolean[] dSemana = new boolean[7];

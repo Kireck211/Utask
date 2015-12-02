@@ -21,7 +21,22 @@ public class ClaseControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "";
+			sql = "INSERT INTO clase (nombre, inicio, fin, ubicacion, dSemana) " 
+			+ "VALUES ('" + clase.getNombre() + "',('"
+			+ clase.getInicio().getYear() + "-"
+			+ clase.getInicio().getMonth() + "-"
+			+ clase.getInicio().getDay() + " "
+			+ 00 + ":"
+			+ 00 + ":"
+			+ 00 + "'),('"
+			+ clase.getFin().getYear() + "-"
+			+ clase.getFin().getMonth() + "-"
+			+ clase.getFin().getDay() + " "
+			+ 00 + ":"
+			+ 00 + ":"
+			+ 00 + "'),'"
+			+ clase.getUbicacion() + "',('"
+			+ clase.getdSemana() + "'))";
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -48,6 +63,7 @@ public class ClaseControl {
 			rs = statement.executeQuery(sql);
 			while (rs.next()) {
 				Clase c = new Clase();
+				
 				/*
 				p.setIdEmployee(rs.getInt(1));
 				p.setName(rs.getString(2));
