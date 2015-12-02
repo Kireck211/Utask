@@ -30,7 +30,7 @@ public class InicioSesionPanel extends JPanel {
 		setBackground(Color.WHITE);
 		nameLabel = new JLabel(new ImageIcon("nombre_icono.png"));
 		contrasenhaLabel = new JLabel(new ImageIcon("contrasenha_icono.png"));
-		icono = new JLabel(new ImageIcon("icono_inicio.png"));
+		icono = new JLabel(new ImageIcon("UtaskLogoo.png"));
 		nameArea = new JTextArea();
 		nameArea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(188, 188, 188)));
 		contrasenhaArea = new JTextArea();
@@ -44,6 +44,8 @@ public class InicioSesionPanel extends JPanel {
 		olvidar = new JButton(new ImageIcon("Olvidar.png"));
 		olvidar.setBorder(null);
 		olvidar.setContentAreaFilled(false);
+	
+	
 		setLayoutInicio();
 		
 		setActionListenersButtons();
@@ -106,7 +108,6 @@ public class InicioSesionPanel extends JPanel {
 		gc.anchor = GridBagConstraints.WEST;
 		gc.gridwidth = 2;
 		add(icono, gc);
-
 		/////////// Next row /////////////////
 		gc.weightx = 2.5;
 		gc.gridy++;
