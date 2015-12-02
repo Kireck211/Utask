@@ -26,6 +26,7 @@ public class CalendarioBoard extends JPanel {
 		
 		mas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				new AgregarTareasFrame();
 				
 			}
 			
