@@ -9,7 +9,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class MainFrame extends JFrame {
-	private HeaderPanel header;
+	private JPanel header;
 	private PanelBarraDeOpciones options;
 	private JPanel board; 
 
@@ -19,7 +19,11 @@ public class MainFrame extends JFrame {
 		header = new HeaderPanel();
 		options = new PanelBarraDeOpciones();
 //		board = new PanelBoard();
-		board = new AjustesBoard();
+//		board = new AjustesBoard();
+//		header= new AjustesPanel();
+		board = new TareasBoard();
+		header = new TareasPanel();
+	
 		
 		setPanels();
 		

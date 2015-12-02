@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
@@ -15,11 +16,18 @@ public class AjustesBoard extends JPanel {
 
 	public AjustesBoard() {
 		setBackground(new Color(255,255,255));
-		examenes = new JButton("Exámenes");
-		tareas = new JButton("Tareas");
-		horario = new JButton("Horario");
-		preestablecido = new JButton("Preestablecido");
-		
+		examenes = new JButton(new ImageIcon("ExamenesAjustes.png"));
+		tareas = new JButton(new ImageIcon("TareasAjustes.png"));
+		horario = new JButton(new ImageIcon("HorarioAjustes.png"));
+		preestablecido = new JButton(new ImageIcon("Preestablecido.png"));
+		examenes.setBorder(null);
+		examenes.setContentAreaFilled(false);
+		tareas.setBorder(null);
+		tareas.setContentAreaFilled(false);
+		horario.setBorder(null);
+		horario.setContentAreaFilled(false);
+		preestablecido.setBorder(null);
+		preestablecido.setContentAreaFilled(false);
 		setLayoutPanel();
 		
 
@@ -34,7 +42,7 @@ public class AjustesBoard extends JPanel {
 		gc.gridx = 0;
 		gc.gridy = 0;
 		gc.fill = GridBagConstraints.HORIZONTAL;
-//		gc.ipady = 110;
+		gc.ipady = 28;
 		add(examenes, gc);
 
 		////// Next row //////
