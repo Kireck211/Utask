@@ -57,7 +57,11 @@ public class InicioSesionPanel extends JPanel {
 		inicio.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				if (nameArea.getText().length()!=0 && contrasenhaArea.getText().length()!=0) {
-					JOptionPane.showMessageDialog(null, "Good");
+					String name = nameArea.getText();
+					String contrasenha = contrasenhaArea.getText();
+					if (name.equals("Erick")&&contrasenha.equals("iteso")){
+						desplegarPantallaMain();
+					}
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "El usuario y/o contraseña están vacios");
@@ -78,6 +82,11 @@ public class InicioSesionPanel extends JPanel {
 				
 			}
 		});
+	}
+	
+	public void desplegarPantallaMain() {
+		ventana.setVisible(false);
+		new MainFrame();
 	}
 
 	public void setLayoutInicio() {
