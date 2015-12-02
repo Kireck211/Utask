@@ -17,18 +17,31 @@ public class PlaneacionBoard extends JPanel {
 	
 	public PlaneacionBoard(){
 		setBackground(new Color(255,255,255));
-		semestres = new JButton(new ImageIcon("Semestres.png"));
-		profesores = new JButton(new ImageIcon("profesores.png"));
-		actual = new JButton(new ImageIcon("actual.png"));
-		semestres.setBorder(null);
-		semestres.setContentAreaFilled(false);
-		profesores.setBorder(null);
-		profesores.setContentAreaFilled(false);
-		actual.setBorder(null);
-		actual.setContentAreaFilled(false);
+		setAll();
+		quitarBordesBotones();
+		quitarFondo();
 		setLayoutPanel();
 		
 	}
+	
+	public void quitarBordesBotones() {
+		semestres.setBorder(null);
+		profesores.setBorder(null);
+		actual.setBorder(null);
+	}
+	
+	public void quitarFondo() {
+		semestres.setContentAreaFilled(false);
+		profesores.setContentAreaFilled(false);
+		actual.setContentAreaFilled(false);
+	}
+	
+	public void setAll() {
+		semestres = new JButton(new ImageIcon("Semestres.png"));
+		profesores = new JButton(new ImageIcon("profesores.png"));
+		actual = new JButton(new ImageIcon("actual.png"));
+	}
+	
 	public void setLayoutPanel() {
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
