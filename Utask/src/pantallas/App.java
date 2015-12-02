@@ -11,12 +11,12 @@ public class App {
 
 			public void run() {
 				try {
-					inicio = new InicioSesionFrame();
+					//inicio = new InicioSesionFrame();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-//				main = new MainFrame();
+				main = new MainFrame();
 
 //				while(inicio.puedeEntrar(nombre, contrasenha))
 				

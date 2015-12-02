@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.sql.Connection;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 
 import baseDeDatos.database.MyConnection;
@@ -21,6 +22,8 @@ public class InicioSesionFrame extends JFrame{
 		setLocationRelativeTo(null); // Centrar frame
 		setVisible(true);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setIconImage(new ImageIcon("UtaskLogo1.png").getImage());
+		
 		/*System.out.println("Entrando a la base");
 		Connection conn = MyConnection.getInstance();
 		System.out.println("Conexión establecida");*/

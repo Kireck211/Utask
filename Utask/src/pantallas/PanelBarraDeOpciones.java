@@ -28,11 +28,13 @@ public class PanelBarraDeOpciones extends JPanel {
 		tarea = new JButton(new ImageIcon("tarea.png"));
 		this.main = main;
 
-		quitarContornoBotones();
+//		quitarContornoBotones();
 		quitarBorderBotones();
 		setLayoutPanel();
-		calendario.setBackground(new Color(0xff00));
-
+		calendario.setBackground(new Color(255,117,38));
+		planeacion.setBackground(new Color(127,51,0));
+		ajustes.setBackground(new Color(119,124,36));
+		tarea.setBackground(new Color(255,203,61));
 		calendario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				main.mostrarUno(1);
