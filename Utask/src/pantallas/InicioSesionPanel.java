@@ -4,11 +4,15 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
@@ -22,8 +26,9 @@ public class InicioSesionPanel extends JPanel {
 	private JButton registrarse;
 	private JButton olvidar;
 	private JButton salir;
+	private InicioSesionFrame ventana;
 
-	public InicioSesionPanel() {
+	public InicioSesionPanel(InicioSesionFrame ventana) {
 		setBackground(Color.WHITE);
 		nameLabel = new JLabel(new ImageIcon("nombre_icono.png"));
 		contrasenhaLabel = new JLabel(new ImageIcon("contrasenha_icono.png"));
@@ -45,6 +50,24 @@ public class InicioSesionPanel extends JPanel {
 		salir.setBorder(null);
 		salir.setContentAreaFilled(false);
 		setLayoutInicio();
+		
+		this.ventana = ventana;
+		setActionListenersButtons();
+		
+	}
+	
+	public void setActionListenersButtons() {
+		inicio.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				if (nameArea.getText().length()!=0 && contrasenhaArea.getText().length()!=0) {
+					JOptionPane.showMessageDialog(null, "Good");
+				}
+				else {
+					JOptionPane.showMessageDialog(null, "El usuario y/o contraseña están vacios");
+				}
+			}
+			
+		});
 	}
 
 	public void setLayoutInicio() {
@@ -53,17 +76,10 @@ public class InicioSesionPanel extends JPanel {
 		GridBagConstraints gc = new GridBagConstraints();
 		gc.weightx = 5;
 		gc.weighty = 5;
-
-		////////////////////////////////////////
-		gc.gridx = 1;
-		gc.gridy = 0;
-		gc.weightx = 1;
-		gc.anchor = GridBagConstraints.EAST;
-		add(salir, gc);
 		
 		//////////// First row ////////////////
 		
-		gc.gridy++;
+		gc.gridy = 0;
 		gc.gridx = 0;
 		gc.weightx = 5;
 		gc.weighty = 2;

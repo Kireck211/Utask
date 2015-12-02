@@ -6,10 +6,7 @@ import javax.swing.JOptionPane;
 
 import calendar.MyDateTime;
 
-class Repetir{
-	public String repeticiones;
-	public int cantidad;
-}
+
 
 public class Clase {
 	private String nombre;

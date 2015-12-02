@@ -10,8 +10,8 @@ public class App {
 		SwingUtilities.invokeLater(new Runnable () {
 
 			public void run() {
-//				inicio = new InicioSesionFrame();
-				main = new MainFrame();
+				inicio = new InicioSesionFrame();
+//				main = new MainFrame();
 				
 //				while(inicio.puedeEntrar(nombre, contrasenha))
 				
