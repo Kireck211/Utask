@@ -20,7 +20,9 @@ public class UsuarioControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "";
+			sql = "INSERT INTO usuario(nickname, contraseña) "
+					+ "VALUES ('" + usuario.getNickName() + "','"
+					+ usuario.getNickName() + "')";
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();

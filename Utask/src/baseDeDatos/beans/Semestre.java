@@ -6,8 +6,8 @@ import calendar.MyDate;
 import planeacion.Materia;
 
 public class Semestre {
+	
 	private int idSemestre;
-
 	private boolean activo;
 	private String nombre;
 	private MyDate inicio;

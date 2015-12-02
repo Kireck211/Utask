@@ -1,6 +1,7 @@
 package baseDeDatos.beans;
 
 public class Usuario {
+	
 	private int idUsuario;
 	private String nickName;
 	private String contrasenha;
