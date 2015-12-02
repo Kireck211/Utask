@@ -4,6 +4,8 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -21,6 +23,13 @@ public class CalendarioBoard extends JPanel {
 		mas.setBorder(null);
 		mas.setContentAreaFilled(false);
 		setLayoutPanel();
+		
+		mas.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
+			
+		});
 	}
 	public void setLayoutPanel() {
 		setLayout(new GridBagLayout());

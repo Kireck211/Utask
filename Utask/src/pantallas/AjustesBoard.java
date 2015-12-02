@@ -3,6 +3,8 @@ package pantallas;
 import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -30,7 +32,14 @@ public class AjustesBoard extends JPanel {
 		preestablecido.setContentAreaFilled(false);
 		setLayoutPanel();
 		
-
+		examenes.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+			
+		});
+			
+		
 	}
 
 	public void setLayoutPanel() {
