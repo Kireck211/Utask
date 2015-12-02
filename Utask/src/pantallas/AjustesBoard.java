@@ -15,6 +15,7 @@ public class AjustesBoard extends JPanel {
 	private JButton tareas;
 	private JButton horario;
 	private JButton preestablecido;
+	private JButton botones[];
 
 	public AjustesBoard() {
 		setBackground(new Color(255,255,255));
@@ -32,16 +33,55 @@ public class AjustesBoard extends JPanel {
 		preestablecido.setContentAreaFilled(false);
 		setLayoutPanel();
 		
+		botones = new JButton[4];
+		botones[0] = examenes;
+		botones[1] = tareas;
+		botones[2] = horario;
+		botones[3] = preestablecido;
+		
 		examenes.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				
 			}
-			
 		});
-			
 		
+		tareas.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		horario.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
+		
+		preestablecido.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 	}
 
+	public void morstrarUno(int lugar){
+		switch(lugar){
+		case 0:
+			break;
+		case 1:
+			break;
+		case 2:
+			break;
+		case 3:
+			break;
+		case 4:
+			break;
+		default:
+			break;
+		};
+	}
+	
+	
 	public void setLayoutPanel() {
 		setLayout(new GridBagLayout());
 		GridBagConstraints gc = new GridBagConstraints();
