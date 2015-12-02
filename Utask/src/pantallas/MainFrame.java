@@ -23,8 +23,10 @@ public class MainFrame extends JFrame {
 //		header= new AjustesPanel();
 //		board = new TareasBoard();
 //		header = new TareasPanel();
-		board = new PlaneacionBoard();
-		header = new PlaneacionPanel();
+//		board = new PlaneacionBoard();
+//		header = new PlaneacionPanel();
+		board= new CalendarioBoard();
+		header = new CalendarioPanel();
 		
 		setPanels();
 		
