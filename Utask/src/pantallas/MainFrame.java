@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -18,6 +19,7 @@ public class MainFrame extends JFrame {
 		getContentPane().setBackground(new Color(255,255,255));
 		header = new HeaderPanel();
 		options = new PanelBarraDeOpciones();
+		setIconImage(new ImageIcon("UtaskLogo1.png").getImage());
 //		board = new PanelBoard();
 //		board = new AjustesBoard();
 //		header= new AjustesPanel();
@@ -27,6 +29,8 @@ public class MainFrame extends JFrame {
 //		header = new PlaneacionPanel();
 		board= new CalendarioBoard();
 		header = new CalendarioPanel();
+		
+		
 		
 		setPanels();
 		

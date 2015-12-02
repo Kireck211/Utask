@@ -1,20 +1,19 @@
 package baseDeDatos.beans;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class ClaseControl {
+public class SemestreControl {
 	private Connection conn;
 
-	public ClaseControl(Connection conn) {
+	public SemestreControl(Connection conn) {
 		this.conn = conn;
 	}
 
-	public void insertClase(Clase clase) {
+	public void insertSemestre(Semestre semestre) {
 		if (conn == null)
 			return;
 		Statement statement = null;
@@ -38,8 +37,8 @@ public class ClaseControl {
 		}
 	}
 
-	public ArrayList<Clase> getClases() {
-		ArrayList<Clase> clases = new ArrayList<Clase>();
+	public ArrayList<Semestre> getSemestres() {
+		ArrayList<Semestre> semestres = new ArrayList<>();
 		String sql = "SELECT idemployee, name, phone, depto, uuid FROM employee";
 		Statement statement = null;
 		ResultSet rs = null;
@@ -47,23 +46,22 @@ public class ClaseControl {
 			statement = conn.createStatement();
 			rs = statement.executeQuery(sql);
 			while (rs.next()) {
-				Clase c = new Clase();
+				Semestre s = new Semestre();
 				/*
-				p.setIdEmployee(rs.getInt(1));
-				p.setName(rs.getString(2));
-				p.setPhone(rs.getString(3));
-				p.setDepto(rs.getInt(4));
-				p.setUuid(rs.getInt(5));*/
-				clases.add(c);
+				 * p.setIdEmployee(rs.getInt(1)); p.setName(rs.getString(2));
+				 * p.setPhone(rs.getString(3)); p.setDepto(rs.getInt(4));
+				 * p.setUuid(rs.getInt(5));
+				 */
+				semestres.add(s);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
 		}
-		return clases;
+		return semestres;
 	}
 
-	public void deleteClase(int idClase) {
+	public void deleteSemestre(int idSemestre) {
 		   if (conn == null) {
 			   return;
 		   }
@@ -87,7 +85,7 @@ public class ClaseControl {
 		   }
 	}
 
-	public void updateClase(Clase clase) {
+	public void updateSemestre(Semestre semestre) {
 		   if (conn == null) { return;}
 		   PreparedStatement statement = null;
 		   String sql = null;
