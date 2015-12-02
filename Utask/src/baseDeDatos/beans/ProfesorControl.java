@@ -20,7 +20,7 @@ public class ProfesorControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "";
+			sql = "INSERT INTO profesor(nombre, email, departamento, materia, telefono)";
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();

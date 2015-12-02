@@ -20,7 +20,21 @@ public class ExamenControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "";
+			sql = "INSERT INTO examen(nombre, inicio, fin, ubicacion) "
+					+ "VALUES ('" + examen.getNombre() + "',('"
+					+ examen.getInicio().getYear() + "-"
+					+ examen.getInicio().getMonth() + "-"
+					+ examen.getInicio().getDay() + " "
+					+ 00 + ":" 
+					+ 00 + ":"
+					+ 00 + "'),('"
+					+ examen.getFin().getYear() + "-"
+					+ examen.getFin().getMonth() + "-"
+					+ examen.getFin().getDay() + " "
+					+ 00 + ":"
+					+ 00 + ":"
+					+ 00 + "'),'"
+					+ examen.getUbicacion() + "')";
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
