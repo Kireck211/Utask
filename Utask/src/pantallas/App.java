@@ -10,8 +10,13 @@ public class App {
 		SwingUtilities.invokeLater(new Runnable () {
 
 			public void run() {
-//				inicio = new InicioSesionFrame();
-				main = new MainFrame();
+				try {
+					inicio = new InicioSesionFrame();
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+//				main = new MainFrame();
 
 //				while(inicio.puedeEntrar(nombre, contrasenha))
 				

@@ -16,6 +16,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import listener.ButtonClickedRegistro;
+
 public class InicioSesionPanel extends JPanel {
 	private JLabel icono;
 	private JLabel nameLabel;
@@ -25,7 +27,6 @@ public class InicioSesionPanel extends JPanel {
 	private JButton inicio;
 	private JButton registrarse;
 	private JButton olvidar;
-	private JButton salir;
 	private InicioSesionFrame ventana;
 
 	public InicioSesionPanel(InicioSesionFrame ventana) {
@@ -46,14 +47,10 @@ public class InicioSesionPanel extends JPanel {
 		olvidar = new JButton(new ImageIcon("Olvidar.png"));
 		olvidar.setBorder(null);
 		olvidar.setContentAreaFilled(false);
-		salir = new JButton(new ImageIcon("Salir.png"));
-		salir.setBorder(null);
-		salir.setContentAreaFilled(false);
 		setLayoutInicio();
 		
-		this.ventana = ventana;
 		setActionListenersButtons();
-		
+		this.ventana = ventana;
 	}
 	
 	public void setActionListenersButtons() {
@@ -67,6 +64,19 @@ public class InicioSesionPanel extends JPanel {
 				}
 			}
 			
+		});
+		
+		registrarse.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0){
+				ventana.setEnabled(false);
+				RegistroFrame registro = new RegistroFrame(ventana);
+			}
+		});
+		
+		olvidar.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent arg0) {
+				
+			}
 		});
 	}
 

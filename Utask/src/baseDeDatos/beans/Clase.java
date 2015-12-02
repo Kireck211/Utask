@@ -7,7 +7,6 @@ import planeacion.Examen;
 import planeacion.Profesor;
 
 public class Clase {
-	private int idClase;
 	private String nombre;
 	private Vector<Profesor> profesores;
 	private MyDateTime inicio;
@@ -17,14 +16,6 @@ public class Clase {
 	private boolean[] dSemana = new boolean[7];
 	private String ubicacion;
 	private Vector<Examen> examenes;
-
-	public int getIdClase() {
-		return idClase;
-	}
-
-	public void setIdClase(int idClase) {
-		this.idClase = idClase;
-	}
 
 	public Vector<Profesor> getProfesores() {
 		return profesores;
