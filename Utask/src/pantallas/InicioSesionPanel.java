@@ -62,6 +62,9 @@ public class InicioSesionPanel extends JPanel {
 					if (name.equals("Erick")&&contrasenha.equals("iteso")){
 						desplegarPantallaMain();
 					}
+					else {
+						JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrecta.");
+					}
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "El usuario y/o contraseña están vacios");
@@ -79,7 +82,7 @@ public class InicioSesionPanel extends JPanel {
 		
 		olvidar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				
+				JOptionPane.showInputDialog(null, "Escriba el correo electrónico por favor, para reestablecer la contraseña.");
 			}
 		});
 	}
