@@ -28,6 +28,7 @@ public class AjustesPanel extends JPanel {
 		cerrar.setContentAreaFilled(false);
 		editar.setBorder(null);
 		editar.setContentAreaFilled(false);
+		setLayoutPanel();
 	
 	}
 	public void setLayoutPanel(){

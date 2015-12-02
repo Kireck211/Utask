@@ -16,6 +16,7 @@ public class CalendarioPanel extends JPanel{
 	private JLabel title;
 	private JButton cerrar;
 	private JButton editar;
+	
 
 	public CalendarioPanel() {
 		setBackground(new Color(255, 255, 255));

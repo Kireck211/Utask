@@ -13,6 +13,7 @@ public class PlaneacionBoard extends JPanel {
 	private JButton semestres;
 	private JButton profesores;
 	private JButton actual;
+	private JButton mas;
 	
 	
 	public PlaneacionBoard(){
@@ -28,18 +29,21 @@ public class PlaneacionBoard extends JPanel {
 		semestres.setBorder(null);
 		profesores.setBorder(null);
 		actual.setBorder(null);
+		mas.setBorder(null);
 	}
 	
 	public void quitarFondo() {
 		semestres.setContentAreaFilled(false);
 		profesores.setContentAreaFilled(false);
 		actual.setContentAreaFilled(false);
+		mas.setContentAreaFilled(false);
 	}
 	
 	public void setAll() {
 		semestres = new JButton(new ImageIcon("Semestres.png"));
 		profesores = new JButton(new ImageIcon("profesores.png"));
 		actual = new JButton(new ImageIcon("actual.png"));
+		mas = new JButton(new ImageIcon("mas.png"));
 	}
 	
 	public void setLayoutPanel() {
@@ -60,6 +64,11 @@ public class PlaneacionBoard extends JPanel {
 		gc.gridx=1;
 		gc.anchor = GridBagConstraints.WEST;
 		add(profesores,gc);
+		
+		gc.weightx = 1;
+		gc.anchor = GridBagConstraints.EAST;
+		gc.insets = new Insets(0, 0, 0, 30);
+		add(mas,gc);
 		
 		//////////////////////////////////
 		gc.gridy++;
