@@ -31,6 +31,7 @@ public class PanelBarraDeOpciones extends JPanel {
 		quitarContornoBotones();
 		quitarBorderBotones();
 		setLayoutPanel();
+		calendario.setBackground(new Color(0xff00));
 
 		calendario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -66,7 +67,7 @@ public class PanelBarraDeOpciones extends JPanel {
 	}
 
 	public void quitarContornoBotones() {
-		calendario.setContentAreaFilled(false);
+//		calendario.setContentAreaFilled(false);
 		planeacion.setContentAreaFilled(false);
 		ajustes.setContentAreaFilled(false);
 		tarea.setContentAreaFilled(false);
