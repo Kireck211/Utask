@@ -5,8 +5,8 @@ import java.util.Vector;
 import planeacion.Horario;
 
 public class Materia {
+	
 	private int idMateria;
-
 	private String nombre;
 	private String color; // en lugar de String es ColorRGB
 	private int hoursLeft;

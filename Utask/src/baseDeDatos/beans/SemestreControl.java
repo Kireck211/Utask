@@ -20,7 +20,22 @@ public class SemestreControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "";
+			sql = "INSERT INTO semestre(nombre, inicio, fin, duracion, activo) "
+					+ "VALUES ('" + semestre.getNombre() + "','"
+					+ semestre.getInicio().getYear() + "-"
+					+ semestre.getInicio().getMonth() + "-"
+					+ semestre.getInicio().getDay() + " "
+					+ 00 + ":" 
+					+ 00 + ":"
+					+ 00 + "'),('"
+					+ semestre.getFin().getYear() + "-"
+					+ semestre.getFin().getMonth() + "-"
+					+ semestre.getFin().getDay() + " "
+					+ 00 + ":"
+					+ 00 + ":"
+					+ 00 + "'),('"
+					+ semestre.getDuracion() + "','"
+					+ semestre.isActivo() + "')";
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();

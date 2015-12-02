@@ -1,11 +1,12 @@
 package baseDeDatos.beans;
 
 public class Profesor {
+	
 	private int idProfesor;
-
 	private String nombre;
 	private String email;
 	private int telefono;
+	private String materia;
 	private String departamento;
 
 	public int getIdProfesor() {
@@ -38,6 +39,14 @@ public class Profesor {
 
 	public void setTelefono(int telefono) {
 		this.telefono = telefono;
+	}
+	
+	public String getMateria() {
+		return materia;
+	}
+
+	public void setMateria(String materia) {
+		this.materia = materia;
 	}
 
 	public String getDepartamento() {

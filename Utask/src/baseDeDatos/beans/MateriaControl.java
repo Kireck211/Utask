@@ -20,7 +20,10 @@ public class MateriaControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "";
+			sql = "INSERT INTO materia(nombre,horas_faltantes,asignacion_faltante) "
+					+ "VALUES ('" + materia.getNombre() + "',('"
+					+ materia.getHoursLeft() + "','"
+					+ materia.getAssignmentLeft() + "')";
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();

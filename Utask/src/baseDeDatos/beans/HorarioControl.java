@@ -13,14 +13,15 @@ public class HorarioControl {
 		this.conn = conn;
 	}
 	
-	public void insertHorario(Connection conn){
+	public void insertHorario(Horario horario){
 		if (conn == null)
 			return;
 		Statement statement = null;
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "";
+			sql = "INSERT INTO horario(nombre) "
+					+ "VALUES ('" + horario.getNombre() + "')";
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();

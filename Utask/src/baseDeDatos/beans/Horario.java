@@ -7,9 +7,9 @@ import planeacion.Examen;
 import tareas.Tarea;
 
 public class Horario {
+	
 	private int idHorario;
 	private String nombre;
-
 	private Vector<Clase> clasesRegulares;
 	private Vector<Clase> claseUv;
 	private Vector<Examen> examenes;
