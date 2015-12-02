@@ -11,6 +11,7 @@ public class Semestre {
 	private MyDate inicio;
 	private MyDate fin;
 	private int duracion;
+	
 	public boolean isActivo() {
 		return activo;
 	}

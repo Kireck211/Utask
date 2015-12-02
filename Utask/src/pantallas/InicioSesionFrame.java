@@ -10,14 +10,14 @@ public class InicioSesionFrame extends JFrame{
 	
 	public InicioSesionFrame() {
 		getContentPane().setBackground(new Color(255,255,255));
-		setUndecorated(true);
 		setLayout(new BorderLayout());
-		inicio = new InicioSesionPanel();
+		inicio = new InicioSesionPanel(this);
 		add(inicio);
 		setSize(500, 500);
 		setResizable(false);
 		setLocationRelativeTo(null); // Centrar frame
 		setVisible(true);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 	
 	public boolean puedeEntrar(String nombre, String contrasenha) {
