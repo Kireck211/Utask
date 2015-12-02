@@ -14,7 +14,7 @@ public class RegistroFrame extends JFrame {
 		this.inicio = inicio;
 		registro = new RegistroPanel(inicio, this);
 
-		setSize(400, 400);
+		setSize(450, 400);
 		setResizable(false);
 		setLocationRelativeTo(null);
 //		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
