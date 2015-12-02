@@ -35,6 +35,7 @@ public class PlaneacionBoard extends JPanel {
 		//////////First row ///////////////
 		gc.gridy++;
 		gc.gridx = 0;
+		gc.weightx = 5; //////////////////// Muy importante para que funcionara, se necesitaba el tamaño total
 		gc.fill = GridBagConstraints.CENTER;
 		gc.gridwidth = 1;
 		gc.anchor = GridBagConstraints.EAST;
@@ -50,9 +51,11 @@ public class PlaneacionBoard extends JPanel {
 		//////////////////////////////////
 		gc.gridy++;
 		gc.gridx=0;
-		gc.anchor = GridBagConstraints.EAST;
-		gc.fill = GridBagConstraints.EAST;
-		gc.gridwidth = 1;
+		gc.weightx = 1; /////// Lo puse menor par que solo ocupara 1 de 5 de espacio
+		gc.anchor = GridBagConstraints.LINE_START; ////// Se pone al principio 
+		gc.insets = new Insets(0, -5, 0, 0);  ////// Se pueden poner valores negativos, y hace el efecto al reves
+//		gc.fill = GridBagConstraints.EAST;
+
 		add(actual,gc);
 		/////////////////////////////////
 
