@@ -30,7 +30,9 @@ public class PlaneacionBoard extends JPanel {
 //				new AgregarTareasFrame();
 //				new AgregarExamenFrame();
 //				new AgregarClaseFrame();
-				new AgregarMateriaFrame();
+//				new AgregarMateriaFrame();
+//				new AgregarProfesorFrame();
+				new AgregarSemestreFrame();
 				
 			}
 			
