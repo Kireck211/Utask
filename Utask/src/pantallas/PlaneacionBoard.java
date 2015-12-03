@@ -29,7 +29,9 @@ public class PlaneacionBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 //				new AgregarTareasFrame();
 //				new AgregarExamenFrame();
-				new AgregarClaseFrame();
+//				new AgregarClaseFrame();
+				new AgregarMateriaFrame();
+				
 			}
 			
 		});
