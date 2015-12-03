@@ -27,7 +27,9 @@ public class PlaneacionBoard extends JPanel {
 		
 		mas.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				
+//				new AgregarTareasFrame();
+//				new AgregarExamenFrame();
+				new AgregarClaseFrame();
 			}
 			
 		});
@@ -50,7 +52,7 @@ public class PlaneacionBoard extends JPanel {
 	
 	public void setAll() {
 		semestres = new JButton(new ImageIcon("Semestres.png"));
-		profesores = new JButton(new ImageIcon("profesores.png"));
+		profesores = new JButton(new ImageIcon("Prof.png"));
 		actual = new JButton(new ImageIcon("actual.png"));
 		mas = new JButton(new ImageIcon("mas.png"));
 	}

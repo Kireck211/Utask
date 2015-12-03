@@ -11,7 +11,7 @@ public class App {
 
 			public void run() {
 				try {
-					//inicio = new InicioSesionFrame();
+//					inicio = new InicioSesionFrame();
 				} catch (Exception e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
