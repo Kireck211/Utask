@@ -24,10 +24,10 @@ public class AgregarHorarioPanel extends JPanel {
 		Font verdana = new Font("Verdana", Font.PLAIN, 12);
 		nombre = new JLabel(new ImageIcon("nombre.png"));
 		nombre.setFont(verdana);
-		nombreArea = new JTextArea();
+		/*nombreArea = new JTextArea();
 		
 			}
-		});
+		});*/
 	}
 
 	public void setLayoutRegistro() {

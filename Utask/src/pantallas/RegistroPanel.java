@@ -56,6 +56,14 @@ public class RegistroPanel extends JPanel {
 				registroFrame.setVisible(false);
 			}
 		});
+		
+		ok.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				String nombre = nombreArea.getText();
+				String contrasenha = contraArea.getText();
+			}
+			
+		});
 	}
 
 	public void setLayoutRegistro() {

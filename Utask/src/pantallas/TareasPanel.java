@@ -5,10 +5,13 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -17,7 +20,7 @@ public class TareasPanel extends JPanel{
 	private JButton cerrar;
 	private JButton editar;
 	
-	public TareasPanel() {
+	public TareasPanel(final MainFrame ventana) {
 		setBackground(new Color(255, 255, 255));
 		setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
 		setLayout(new BorderLayout());
@@ -28,7 +31,26 @@ public class TareasPanel extends JPanel{
 		cerrar.setContentAreaFilled(false);
 		editar.setBorder(null);
 		editar.setContentAreaFilled(false);
-
+		editar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new EditarPersona();
+			}
+			
+		});
+		
+		cerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					ventana.setVisible(false);
+					new InicioSesionFrame();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+			
+		});
 		setLayoutPanel();
 	}
 	public void setLayoutPanel(){

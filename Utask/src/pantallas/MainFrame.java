@@ -40,11 +40,11 @@ public class MainFrame extends JFrame {
 		board[3] = new PlaneacionBoard();
 		board[4] = new AjustesBoard();
 
-		head[0] = new HeaderPanel();
-		head[1] = new CalendarioPanel();
-		head[2] = new TareasPanel();
-		head[3] = new PlaneacionPanel();
-		head[4] = new AjustesPanel();
+		head[0] = new HeaderPanel(this);
+		head[1] = new CalendarioPanel(this);
+		head[2] = new TareasPanel(this);
+		head[3] = new PlaneacionPanel(this);
+		head[4] = new AjustesPanel(this);
 		
 		options = new PanelBarraDeOpciones(this);
 	}

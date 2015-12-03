@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
+import calendar.MyDateTime;
+
 public class ClaseControl {
 	private Connection conn;
 
@@ -21,22 +23,11 @@ public class ClaseControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "INSERT INTO clase (nombre, inicio, fin, ubicacion, dSemana) " 
-			+ "VALUES ('" + clase.getNombre() + "',('"
-			+ clase.getInicio().getYear() + "-"
-			+ clase.getInicio().getMonth() + "-"
-			+ clase.getInicio().getDay() + " "
-			+ 00 + ":"
-			+ 00 + ":"
-			+ 00 + "'),('"
-			+ clase.getFin().getYear() + "-"
-			+ clase.getFin().getMonth() + "-"
-			+ clase.getFin().getDay() + " "
-			+ 00 + ":"
-			+ 00 + ":"
-			+ 00 + "'),'"
-			+ clase.getUbicacion() + "',('"
-			+ clase.getdSemana() + "'))";
+			sql = "INSERT INTO clase (nombre, inicio_dia, inicio_mes, inicio_anho, fin_dia, fin_mes, fin_anho, ubicacion) "
+					+ "VALUES ('" + clase.getNombre() + "','" + clase.getInicio().getDay() + "','"
+					+ clase.getInicio().getMonth() + "','" + clase.getInicio().getYear() + "','"
+					+ clase.getFin().getDay() + "','" + clase.getFin().getMonth() + "','" + clase.getFin().getYear()
+					+ "','" + clase.getUbicacion() + "')";
 			statement.executeQuery(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -55,7 +46,7 @@ public class ClaseControl {
 
 	public ArrayList<Clase> getClases() {
 		ArrayList<Clase> clases = new ArrayList<Clase>();
-		String sql = "SELECT idemployee, name, phone, depto, uuid FROM employee";
+		String sql = "SELECT idClase, nombre, inicio_dia, inicio_mes, inicio_anho, fin_dia, fin_mes, fin_anho, ubicacion FROM clase";
 		Statement statement = null;
 		ResultSet rs = null;
 		try {
@@ -63,13 +54,11 @@ public class ClaseControl {
 			rs = statement.executeQuery(sql);
 			while (rs.next()) {
 				Clase c = new Clase();
-				
-				/*
-				p.setIdEmployee(rs.getInt(1));
-				p.setName(rs.getString(2));
-				p.setPhone(rs.getString(3));
-				p.setDepto(rs.getInt(4));
-				p.setUuid(rs.getInt(5));*/
+				c.setIdClase(rs.getInt(1));
+				c.setNombre(rs.getString(2));
+				c.setInicio(new MyDateTime(rs.getInt(3), rs.getInt(4), rs.getInt(5)));
+				c.setFin(new MyDateTime(rs.getInt(6), rs.getInt(7), rs.getInt(8)));
+				c.setUbicacion(rs.getString(9));
 				clases.add(c);
 			}
 		} catch (SQLException e) {
@@ -80,53 +69,58 @@ public class ClaseControl {
 	}
 
 	public void deleteClase(int idClase) {
-		   if (conn == null) {
-			   return;
-		   }
-		   Statement statement = null;
-		   String sql = null;
-		   try {
-			   statement = conn.createStatement();
-			   sql = "DELETE FROM employee WHERE idemployee = " + idEmployee;
-			   statement.executeUpdate(sql);
-		   } catch (SQLException e) {
-			   e.printStackTrace();
-		   } finally {
-			   if (statement != null) {
-				   try {
-					   statement.close();
-				   } catch (SQLException e) {
-				   } finally {
-					   sql = null;
-				   }
-			   }
-		   }
+		if (conn == null) {
+			return;
+		}
+		Statement statement = null;
+		String sql = null;
+		try {
+			statement = conn.createStatement();
+			sql = "DELETE FROM clase WHERE idClase = " + idClase;
+			statement.executeUpdate(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+				} finally {
+					sql = null;
+				}
+			}
+		}
 	}
 
 	public void updateClase(Clase clase) {
-		   if (conn == null) { return;}
-		   PreparedStatement statement = null;
-		   String sql = null;
-		   try {			
-			   sql = "UPDATE employee SET name = ?, phone = ? WHERE idemployee = ?";
-			   statement = conn.prepareStatement(sql);		
-			   statement.setString(1, employee.getName());
-			   statement.setString(2, employee.getPhone());
-			   statement.setInt(3, employee.getIdEmployee());
-			   statement.executeUpdate();
-		   } catch (SQLException e) {
-			   e.printStackTrace();
-		   } finally {
-			   if (statement != null) {
-				   try {
-					   statement.close();
-				   } catch (SQLException e) {
-				   } finally {
-					   sql = null;
-				   }
-			   }
-		   }
-
-	   }
+		if (conn == null) {
+			return;
+		}
+		PreparedStatement statement = null;
+		String sql = null;
+		try {
+			sql = "UPDATE clase SET nombre = ?, inicio_dia = ?, inicio_mes = ?, inicio_anho = ?, fin_dia = ?, fin_mes = ?, fin_anho = ?, ubicacion = ? WHERE idClase = ?";
+			statement = conn.prepareStatement(sql);
+			statement.setString(1, clase.getNombre());
+			statement.setString(2, clase.getInicio().getDay() + "");
+			statement.setString(3, clase.getInicio().getMonth() + "");
+			statement.setString(4, clase.getInicio().getYear() + "");
+			statement.setString(5, clase.getFin().getDay() + "");
+			statement.setString(6, clase.getFin().getMonth() + "");
+			statement.setString(7, clase.getFin().getYear() + "");
+			statement.setString(8, clase.getUbicacion());
+			statement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+				} finally {
+					sql = null;
+				}
+			}
+		}
 	}
 }
