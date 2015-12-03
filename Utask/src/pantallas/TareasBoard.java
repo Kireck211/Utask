@@ -39,7 +39,7 @@ public class TareasBoard extends JPanel{
 	
 	mas.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e) {
-			
+			new AgregarTareasFrame();
 		}
 		
 	});

@@ -5,6 +5,8 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -17,7 +19,7 @@ public class HeaderPanel extends JPanel {
 	private JButton cerrar;
 	private JButton editar;
 	
-	public HeaderPanel(){
+	public HeaderPanel(final MainFrame ventana){
 		setBackground(new Color(255,255,255));
 		setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
 		setLayout(new BorderLayout());
@@ -29,6 +31,27 @@ public class HeaderPanel extends JPanel {
 		editar.setBorder(null);
 		editar.setContentAreaFilled(false);
 		setLayoutPanel();
+		
+		editar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				new EditarPersona();
+			}
+			
+		});
+		
+		cerrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					ventana.setVisible(false);
+					new InicioSesionFrame();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
+			}
+			
+		});
 		
 	}
 	public void setLayoutPanel(){

@@ -35,31 +35,31 @@ public class AjustesBoard extends JPanel {
 		
 		botones = new JButton[4];
 		botones[0] = examenes;
-		botones[1] = tareas;
-		botones[2] = horario;
+		botones[1] = horario;
+		botones[2] = tareas;
 		botones[3] = preestablecido;
 		
 		examenes.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				
+				morstrarUno(0);
 			}
 		});
 		
 		tareas.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				
+				morstrarUno(1);
 			}
 		});
 		
 		horario.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				
+				morstrarUno(2);
 			}
 		});
 		
 		preestablecido.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				
+				morstrarUno(3);
 			}
 		});
 	}
@@ -67,16 +67,33 @@ public class AjustesBoard extends JPanel {
 	public void morstrarUno(int lugar){
 		switch(lugar){
 		case 0:
+			for(int i = 0;i<4;i++){
+				botones[i].setVisible(true);;
+			}
 			break;
 		case 1:
+			botones[1].setVisible(true);
+			for(int i = 0;i<4;i++){
+				if (i==1)
+					continue;
+				botones[i].setVisible(false);
+			}
 			break;
 		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
+			botones[2].setVisible(true);
+			for(int i = 0;i<4;i++){
+				if (i==2)
+					continue;
+				botones[i].setVisible(false);
+			}
 			break;
 		default:
+			botones[3].setVisible(true);
+			for(int i = 0;i<4;i++){
+				if (i==3)
+					continue;
+				botones[i].setVisible(false);
+			}
 			break;
 		};
 	}

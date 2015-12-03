@@ -5,13 +5,12 @@ import java.awt.BorderLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class AgregarTareasFrame extends JFrame {
+public class AgregarSemestreFrame extends JFrame{
+private JPanel semestre;
 	
-	private JPanel tareas;
-	
-	public AgregarTareasFrame() {
+	public AgregarSemestreFrame() {
 
-		tareas = new AgregarTareasPanel();
+		semestre = new AgregarSemestrePanel();
 
 		setSize(700, 600);
 		setResizable(false);
@@ -20,7 +19,7 @@ public class AgregarTareasFrame extends JFrame {
 		setUndecorated(true);
 		
 		setLayout(new BorderLayout());
-		add(tareas);
+		add(semestre);
 		
 		
 		setVisible(true);

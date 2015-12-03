@@ -16,6 +16,7 @@ public class PlaneacionBoard extends JPanel {
 	private JButton profesores;
 	private JButton actual;
 	private JButton mas;
+	private int semestre_profesor;
 	
 	
 	public PlaneacionBoard(){
@@ -24,9 +25,36 @@ public class PlaneacionBoard extends JPanel {
 		quitarBordesBotones();
 		quitarFondo();
 		setLayoutPanel();
+		semestres.setSelected(true);
+		
+		semestres.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e) {
+					semestre_profesor = 1;
+			}
+			
+		});
+		
+		profesores.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				semestre_profesor = 0;
+			}
+			
+		});
 		
 		mas.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
+				if (semestre_profesor == 1){
+					
+				}
+				else {
+					
+				}
+				/*new AgregarTareasFrame();
+				new AgregarExamenFrame();
+				new AgregarClaseFrame();*/
+//				new AgregarMateriaFrame();
+//				new AgregarProfesorFrame();
+//				new AgregarSemestreFrame();
 				
 			}
 			
@@ -50,7 +78,7 @@ public class PlaneacionBoard extends JPanel {
 	
 	public void setAll() {
 		semestres = new JButton(new ImageIcon("Semestres.png"));
-		profesores = new JButton(new ImageIcon("profesores.png"));
+		profesores = new JButton(new ImageIcon("Prof.png"));
 		actual = new JButton(new ImageIcon("actual.png"));
 		mas = new JButton(new ImageIcon("mas.png"));
 	}
