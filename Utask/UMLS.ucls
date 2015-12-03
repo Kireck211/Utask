@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.1.9" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="listener" project="Utask" file="/Utask/src/listener" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="290" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="ajustes" project="Utask" file="/Utask/src/ajustes" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="431" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="3" language="java" name="pantallas.InicioSesionPanel" project="Utask" 
+    file="/Utask/src/pantallas/InicioSesionPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="279" width="204" x="6919" y="746"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="pantallas.PanelBarraDeOpciones" project="Utask" 
+    file="/Utask/src/pantallas/PanelBarraDeOpciones.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="198" x="6681" y="746"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="pantallas.AgregarProfesorFrame" project="Utask" 
+    file="/Utask/src/pantallas/AgregarProfesorFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="156" x="572" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="pantallas.JPanelModified" project="Utask" 
+    file="/Utask/src/pantallas/JPanelModified.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="133" x="768" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="7" language="java" name="pantallas.ButtonListener" project="Utask" 
+    file="/Utask/src/pantallas/ButtonListener.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="126" x="941" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="8" language="java" name="planeacion.Materia" project="Utask" file="/Utask/src/planeacion/Materia.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="139" x="1606" y="445"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <component id="9" language="java" name="src" project="Utask" file="/Utask/src" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="39" width="114" x="1107" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </component>  
+  <class id="10" language="java" name="pantallas.PanelBoard" project="Utask" file="/Utask/src/pantallas/PanelBoard.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="120" x="1261" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="pantallas.TareasPanel" project="Utask" 
+    file="/Utask/src/pantallas/TareasPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="145" x="1421" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="pantallas.HeaderPanel" project="Utask" 
+    file="/Utask/src/pantallas/HeaderPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="147" x="1832" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="pantallas.CalendarioPanel" project="Utask" 
+    file="/Utask/src/pantallas/CalendarioPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="163" x="2019" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="14" language="java" name="calendar" project="Utask" file="/Utask/src/calendar" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="2222" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="15" language="java" name="pantallas.MainFrame" project="Utask" file="/Utask/src/pantallas/MainFrame.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="153" x="6681" y="445"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="pantallas.AgregarClaseFrame" project="Utask" 
+    file="/Utask/src/pantallas/AgregarClaseFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="138" x="2363" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="17" language="java" name="tareas" project="Utask" file="/Utask/src/tareas" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="2541" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="18" language="java" name="pantallas.AgregarSemestreFrame" project="Utask" 
+    file="/Utask/src/pantallas/AgregarSemestreFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="162" x="2682" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="pantallas.CalendarioBoard" project="Utask" 
+    file="/Utask/src/pantallas/CalendarioBoard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="135" width="131" x="2884" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="planeacion.Semestre" project="Utask" file="/Utask/src/planeacion/Semestre.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="186" x="1606" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="planeacion.Profesor" project="Utask" file="/Utask/src/planeacion/Profesor.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="351" width="180" x="1492" y="2081"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="pantallas.PlaneacionPanel" project="Utask" 
+    file="/Utask/src/pantallas/PlaneacionPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="164" x="3055" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="planeacion.Clase" project="Utask" file="/Utask/src/planeacion/Clase.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="549" width="414" x="1386" y="1065"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="planeacion.Examen" project="Utask" file="/Utask/src/planeacion/Examen.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="387" width="342" x="1630" y="1654"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="pantallas.InicioSesionFrame" project="Utask" 
+    file="/Utask/src/pantallas/InicioSesionFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="193" x="6919" y="445"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="pantallas.AgregarExamenFrame" project="Utask" 
+    file="/Utask/src/pantallas/AgregarExamenFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="152" x="3259" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="pantallas.EditarPersona" project="Utask" 
+    file="/Utask/src/pantallas/EditarPersona.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="105" x="3451" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="pantallas.AgregarTareasFrame" project="Utask" 
+    file="/Utask/src/pantallas/AgregarTareasFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="145" x="3596" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="29" language="java" name="planeacion" project="Utask" file="/Utask/src/planeacion" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="3781" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="30" language="java" name="pantallas.AjustesBoard" project="Utask" 
+    file="/Utask/src/pantallas/AjustesBoard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="139" x="3922" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="pantallas.AgregarTareasPanel" project="Utask" 
+    file="/Utask/src/pantallas/AgregarTareasPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="261" width="148" x="4101" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="pantallas.PlaneacionBoard" project="Utask" 
+    file="/Utask/src/pantallas/PlaneacionBoard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="159" x="4537" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="pantallas.AgregarExamenPanel" project="Utask" 
+    file="/Utask/src/pantallas/AgregarExamenPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="148" x="4736" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="pantallas.AgregarSemestrePanel" project="Utask" 
+    file="/Utask/src/pantallas/AgregarSemestrePanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="158" x="4924" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="pantallas.AgregarClasePanel" project="Utask" 
+    file="/Utask/src/pantallas/AgregarClasePanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="243" width="134" x="1386" y="746"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="36" language="java" name="pantallas.AgregarMateriaPanel" project="Utask" 
+    file="/Utask/src/pantallas/AgregarMateriaPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="207" width="145" x="5122" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="pantallas.RegistroPanel" project="Utask" 
+    file="/Utask/src/pantallas/RegistroPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="225" width="208" x="4289" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="38" language="java" name="baseDeDatos.database" project="Utask" file="/Utask/src/baseDeDatos/database" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="156" x="5307" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="39" language="java" name="baseDeDatos.tools" project="Utask" file="/Utask/src/baseDeDatos/tools" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="131" x="5503" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="40" language="java" name="pantallas.AjustesPanel" project="Utask" 
+    file="/Utask/src/pantallas/AjustesPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="153" width="149" x="5674" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="planeacion.Horario" project="Utask" file="/Utask/src/planeacion/Horario.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="171" width="205" x="1606" y="746"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="pantallas.AgregarHorarioPanel" project="Utask" 
+    file="/Utask/src/pantallas/AgregarHorarioPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="145" x="5863" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="43" language="java" name="pantallas.AgregarProfesorPanel" project="Utask" 
+    file="/Utask/src/pantallas/AgregarProfesorPanel.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="152" x="6048" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="44" language="java" name="pantallas" project="Utask" file="/Utask/src/pantallas" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="50" width="101" x="6240" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="45" language="java" name="planeacion.Repetir" project="Utask" file="/Utask/src/planeacion/Repetir.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="162" x="1309" y="1654"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="46" language="java" name="baseDeDatos.beans" project="Utask" file="/Utask/src/baseDeDatos/beans" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="50" width="138" x="6381" y="18"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="47" language="java" name="pantallas.TareasBoard" project="Utask" 
+    file="/Utask/src/pantallas/TareasBoard.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="189" width="131" x="6559" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="pantallas.RegistroFrame" project="Utask" 
+    file="/Utask/src/pantallas/RegistroFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="117" width="139" x="4289" y="445"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="49" language="java" name="pantallas.AgregarMateriaFrame" project="Utask" 
+    file="/Utask/src/pantallas/AgregarMateriaFrame.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="149" x="6730" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="50" language="java" name="pantallas.App" project="Utask" file="/Utask/src/pantallas/App.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="99" width="113" x="6919" y="18"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="51">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="52" name="horarios"/>      
+      <multiplicity id="53" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="41" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="54">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="55" name="clases"/>      
+      <multiplicity id="56" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="57">    
+    <bendpoint x="1830" y="1065"/>    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="58" name="examenes"/>      
+      <multiplicity id="59" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="61" name="options"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="4" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="64" name="registroFrame"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="48" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="20" navigable="false">      
+      <attribute id="67" name="materias"/>      
+      <multiplicity id="68" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="70" name="ventana"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="73" name="profesores"/>      
+      <multiplicity id="74" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="75">    
+    <bendpoint x="1501" y="1654"/>    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="76" name="profesores"/>      
+      <multiplicity id="77" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="78">    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="79" name="claseUv"/>      
+      <multiplicity id="80" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="81">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="82" name="main"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="25" navigable="false">      
+      <attribute id="85" name="inicio"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="87">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="88" name="repeticion"/>      
+      <multiplicity id="89" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="45" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="90">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="91" name="examenes"/>      
+      <multiplicity id="92" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="93">    
+    <end type="SOURCE" refId="50" navigable="false">      
+      <attribute id="94" name="inicio"/>      
+      <multiplicity id="95" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="96">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="97" name="main"/>      
+      <multiplicity id="98" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="99">    
+    <end type="SOURCE" refId="41" navigable="false">      
+      <attribute id="100" name="clasesRegulares"/>      
+      <multiplicity id="101" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
