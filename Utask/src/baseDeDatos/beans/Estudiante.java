@@ -6,10 +6,8 @@ public class Estudiante {
 	
 	private int idEstudiante;
 	private String nombre;
-	private MyDateTime fechaNacimiento;
 	private String carrera;
 	private String email;
-	private String ciudadOrigen;
 	private Usuario usuario;
 
 	public int getIdEstudiante() {
@@ -36,14 +34,6 @@ public class Estudiante {
 		this.nombre = nombre;
 	}
 
-	public MyDateTime getFechaNacimiento() {
-		return fechaNacimiento;
-	}
-
-	public void setFechaNacimiento(MyDateTime fechaNacimiento) {
-		this.fechaNacimiento = fechaNacimiento;
-	}
-
 	public String getCarrera() {
 		return carrera;
 	}
@@ -58,14 +48,6 @@ public class Estudiante {
 
 	public void setEmail(String email) {
 		this.email = email;
-	}
-
-	public String getCiudadOrigen() {
-		return ciudadOrigen;
-	}
-
-	public void setCiudadOrigen(String ciudadOrigen) {
-		this.ciudadOrigen = ciudadOrigen;
 	}
 
 }

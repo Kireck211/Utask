@@ -44,10 +44,12 @@ public class PlaneacionBoard extends JPanel {
 		mas.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				if (semestre_profesor == 1){
-					
+					new AgregarSemestreFrame();
 				}
 				else {
-					
+					new AgregarTareasFrame();
+					new AgregarExamenFrame();
+					new AgregarMateriaFrame();
 				}
 				/*new AgregarTareasFrame();
 				new AgregarExamenFrame();

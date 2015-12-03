@@ -6,6 +6,7 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -58,7 +59,7 @@ public class InicioSesionPanel extends JPanel {
 				if (nameArea.getText().length()!=0 && contrasenhaArea.getText().length()!=0) {
 					String name = nameArea.getText();
 					String contrasenha = contrasenhaArea.getText();
-					if (name.equals("Erick")&&contrasenha.equals("iteso")){
+					if (name.equals("Utask")&&contrasenha.equals("Utask")){
 						desplegarPantallaMain();
 					}
 					else {

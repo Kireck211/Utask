@@ -102,13 +102,14 @@ public class ClaseControl {
 			sql = "UPDATE clase SET nombre = ?, inicio_dia = ?, inicio_mes = ?, inicio_anho = ?, fin_dia = ?, fin_mes = ?, fin_anho = ?, ubicacion = ? WHERE idClase = ?";
 			statement = conn.prepareStatement(sql);
 			statement.setString(1, clase.getNombre());
-			statement.setString(2, clase.getInicio().getDay() + "");
-			statement.setString(3, clase.getInicio().getMonth() + "");
-			statement.setString(4, clase.getInicio().getYear() + "");
-			statement.setString(5, clase.getFin().getDay() + "");
-			statement.setString(6, clase.getFin().getMonth() + "");
-			statement.setString(7, clase.getFin().getYear() + "");
+			statement.setInt(2, clase.getInicio().getDay());
+			statement.setInt(3, clase.getInicio().getMonth());
+			statement.setInt(4, clase.getInicio().getYear());
+			statement.setInt(5, clase.getFin().getDay());
+			statement.setInt(6, clase.getFin().getMonth());
+			statement.setInt(7, clase.getFin().getYear());
 			statement.setString(8, clase.getUbicacion());
+			statement.setInt(9, clase.getIdClase());
 			statement.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

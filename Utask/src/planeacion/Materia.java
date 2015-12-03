@@ -9,6 +9,10 @@ private int hoursLeft;
 private int assignmentLeft;
 protected Vector <Horario> horarios; 
 
+public Materia(String nombre){
+	this.nombre = nombre;
+}
+
 public void setNombre(String n){
 	this.nombre=n;
 }

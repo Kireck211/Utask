@@ -5,12 +5,18 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
+
+import planeacion.Materia;
+import tareas.Tarea;
 
 public class AgregarTareasPanel extends JPanel{
 	private JLabel titulo;
@@ -19,7 +25,15 @@ public class AgregarTareasPanel extends JPanel{
 	private JLabel descripcion;
 	private JLabel realizada;
 	private String[] opciones = {"Realizada", "No realizada"};
+	private JTextArea tituloA;
+	private JTextArea asignaturaA;
+	private JTextArea nombreA;
+	private JTextArea descripcionA;
 	private JComboBox lista;
+	private Vector<Tarea> tareas;
+	private String nombre_jp;
+	private String asignatura_jp;
+	private String descripcion_jp;
 
 
 
@@ -32,14 +46,19 @@ public AgregarTareasPanel() {
 	nombre = new JLabel(new ImageIcon("nombree.png"));
 	descripcion = new JLabel(new ImageIcon("Descripcion.png"));
 	realizada = new JLabel(new ImageIcon("Realizada.png"));
+	GridBagConstraints gc = new GridBagConstraints();
+	
+	setLayoutPanel(gc);
+	
 	lista = new JComboBox(opciones);
 	lista.setSelectedIndex(0); 	
-	setLayoutPanel();
+	nombre_jp = JOptionPane.showInputDialog("Nombre de la tarea");
+	asignatura_jp = JOptionPane.showInputDialog("Nombre de la asignatura");
+	descripcion_jp = JOptionPane.showInputDialog("Escriba la descripción");
 
 }
-public void setLayoutPanel(){
+public void setLayoutPanel(GridBagConstraints gc){
 	setLayout(new GridBagLayout());
-	GridBagConstraints gc = new GridBagConstraints();
 
 	gc.weightx = 5;
 	gc.weighty = 5;
@@ -55,25 +74,35 @@ public void setLayoutPanel(){
 	gc.anchor= GridBagConstraints.WEST;
 	gc.insets = new Insets(0, 0, 0, 0);
 	add(nombre,gc);
-
+	gc.gridx = 1;
+	JLabel nombre_jl = new JLabel(nombre_jp);
+	add(nombre_jl,gc);
 
 	///////// Next row ///////
+	gc.gridx = 0;
 	gc.gridy++;
 	add(asignatura,gc);
+	gc.gridx = 1;
+	JLabel asignatura_jl = new JLabel(asignatura_jp);
+	add(asignatura_jl, gc);
 	
 	gc.gridy++;
+	gc.gridx = 0;
 	add(descripcion,gc);
+	gc.gridx = 1;
+	JLabel descripcion_jl = new JLabel(descripcion_jp);
+	add(descripcion_jl,gc);
 	
+	gc.gridx = 0;
 	gc.gridy++;
 	add(realizada,gc);
 	
-	gc.gridx = 1;
-	gc.ipadx = 180;
+	
+	/*gc.ipadx = 180;
 	gc.insets = new Insets(0, 0, 0, 20);
-	add(lista,gc);
+	add(lista,gc);*/
 
 	
-
-
+	
 }
 }

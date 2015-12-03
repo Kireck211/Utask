@@ -5,11 +5,17 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import planeacion.Clase;
+import planeacion.Materia;
+import tareas.Tarea;
 
 public class AgregarClasePanel extends JPanel{
 	private JLabel titulo;
@@ -20,6 +26,7 @@ public class AgregarClasePanel extends JPanel{
 	private JLabel profesor;
 	private JLabel dSemana;
 	private JLabel examenes;
+	private Vector<Clase> clases;
 
 public AgregarClasePanel() {
 	setBackground(new Color(255, 255, 255));
@@ -35,6 +42,11 @@ public AgregarClasePanel() {
 	examenes = new JLabel(new ImageIcon("examen.png"));
 	
 	setLayoutPanel();
+	
+	String nombre = JOptionPane.showInputDialog("Nombre de la tarea");
+	String asignatura = JOptionPane.showInputDialog("Nombre de la asignatura");
+	String descripcion = JOptionPane.showInputDialog("Escriba la descripción");
+//	tareas.addElement(new Tarea(new Materia(asignatura),nombre,descripcion));
 
 }
 public void setLayoutPanel(){
