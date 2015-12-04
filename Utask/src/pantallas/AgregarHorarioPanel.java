@@ -1,5 +1,6 @@
 package pantallas;
 
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -18,12 +19,15 @@ import javax.swing.JTextArea;
 public class AgregarHorarioPanel extends JPanel {
 	
 	private JLabel nombre;
+	private JTextArea nombreLinea;
 	
 
 	public AgregarHorarioPanel() {
 		Font verdana = new Font("Verdana", Font.PLAIN, 12);
 		nombre = new JLabel(new ImageIcon("nombre.png"));
 		nombre.setFont(verdana);
+		nombreLinea = new JTextArea();
+		nombreLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
 		/*nombreArea = new JTextArea();
 		
 			}
@@ -41,6 +45,11 @@ public class AgregarHorarioPanel extends JPanel {
 //		gc.anchor= GridBagConstraints.LINE_;
 		add(nombre, gc);
 
+		gc.gridx = 1;
+		gc.ipadx = 200;
+		// gc.ipadx = 180;
+		add(nombreLinea, gc);
+		
 		gc.gridx = 1;
 		gc.weightx = 5;
 		gc.ipadx = 170;
