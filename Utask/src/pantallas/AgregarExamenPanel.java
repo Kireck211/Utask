@@ -57,7 +57,6 @@ public AgregarExamenPanel() {
 	ok.setBorderPainted(false);
 	cancel.setBorderPainted(false);
 	
-	
 	setLayoutPanel();
 
 }
@@ -130,8 +129,7 @@ public void setLayoutPanel(){
 	gc.ipadx = 200;
 	gc.insets = new Insets(0, 0, 0, 40);
 	add(profesorLinea, gc);
-
-
+	
 	gc.gridy++;
 	gc.ipadx = 0;
 	gc.gridx = 0;
@@ -140,7 +138,6 @@ public void setLayoutPanel(){
 	
 	gc.gridx = 1;
 	add(cancel,gc);
-	
 
 }
 

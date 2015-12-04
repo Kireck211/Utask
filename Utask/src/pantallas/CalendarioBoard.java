@@ -6,28 +6,31 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class CalendarioBoard extends JPanel {
 	private JLabel calendario;
 	private JButton mas;
+	private JTextArea texto;
 	
 	public CalendarioBoard(){
 		setBackground(Color.WHITE);
 		calendario = new JLabel(new ImageIcon("CalendarioLibro.png"));
 		mas = new JButton(new ImageIcon("mas.png"));
+		texto = new JTextArea();
 		mas.setBorder(null);
 		mas.setContentAreaFilled(false);
 		setLayoutPanel();
 		
 		mas.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new AgregarTareasFrame();
-				
+				AgregarTareasFrame tarea =new AgregarTareasFrame();
 			}
 			
 		});
@@ -56,6 +59,10 @@ public class CalendarioBoard extends JPanel {
 		gc.anchor = GridBagConstraints.NORTHEAST;
 		gc.insets = new Insets(20, 0, 0, 30);
 		add(mas,gc);
+		
+		gc.gridx = 0;
+		gc.gridwidth = 2;
+		add(texto, gc);
 		
 	}
 }

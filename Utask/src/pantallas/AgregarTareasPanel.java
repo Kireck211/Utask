@@ -9,6 +9,7 @@ import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -34,6 +35,8 @@ public class AgregarTareasPanel extends JPanel{
 	private String nombre_jp;
 	private String asignatura_jp;
 	private String descripcion_jp;
+	private JButton ok;
+	private JButton cancel;
 	
 
 
@@ -47,14 +50,17 @@ public AgregarTareasPanel() {
 	descripcion = new JLabel(new ImageIcon("Descripcion.png"));
 	realizada = new JLabel(new ImageIcon("Realizada.png"));
 	GridBagConstraints gc = new GridBagConstraints();
+	ok = new JButton(new ImageIcon("ok.png"));
+	cancel = new JButton(new ImageIcon("cancel.png"));
 	
+	ok.setContentAreaFilled(false);
+	cancel.setContentAreaFilled(false);
+	ok.setBorderPainted(false);
+	cancel.setBorderPainted(false);
 	setLayoutPanel(gc);
 	
 	lista = new JComboBox(opciones);
 	lista.setSelectedIndex(0); 	
-	nombre_jp = JOptionPane.showInputDialog("Nombre de la tarea");
-	asignatura_jp = JOptionPane.showInputDialog("Nombre de la asignatura");
-	descripcion_jp = JOptionPane.showInputDialog("Escriba la descripción");
 
 }
 public void setLayoutPanel(GridBagConstraints gc){
@@ -97,6 +103,14 @@ public void setLayoutPanel(GridBagConstraints gc){
 	gc.gridy++;
 	add(realizada,gc);
 	
+	gc.gridy++;
+	gc.ipadx = 0;
+	gc.gridx = 0;
+	gc.anchor = GridBagConstraints.CENTER;
+	add(ok,gc);
+	
+	gc.gridx = 1;
+	add(cancel,gc);
 	
 	/*gc.ipadx = 180;
 	gc.insets = new Insets(0, 0, 0, 20);

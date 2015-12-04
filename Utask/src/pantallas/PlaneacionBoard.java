@@ -10,6 +10,7 @@ import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 
 public class PlaneacionBoard extends JPanel {
 	private JButton semestres;
@@ -17,6 +18,7 @@ public class PlaneacionBoard extends JPanel {
 	private JButton actual;
 	private JButton mas;
 	private int semestre_profesor;
+	private JTextArea semestres_prof;
 	
 	
 	public PlaneacionBoard(){
@@ -47,18 +49,12 @@ public class PlaneacionBoard extends JPanel {
 					new AgregarSemestreFrame();
 				}
 				else {
-					/*new AgregarTareasFrame();
-					
-					new AgregarExamenFrame();
-					new AgregarMateriaFrame();*/
+					new AgregarProfesorFrame();
 				}
-//				new AgregarTareasFrame();
-//				new AgregarExamenFrame();
-//				new AgregarClaseFrame();
-//				new AgregarMateriaFrame();
-//				new AgregarProfesorFrame();
-				new AgregarSemestreFrame();
-				
+				new AgregarTareasFrame();
+				new AgregarExamenFrame();
+				new AgregarClaseFrame();
+				new AgregarMateriaFrame();
 			}
 			
 		});
@@ -84,6 +80,8 @@ public class PlaneacionBoard extends JPanel {
 		profesores = new JButton(new ImageIcon("Prof.png"));
 		actual = new JButton(new ImageIcon("actual.png"));
 		mas = new JButton(new ImageIcon("mas.png"));
+		semestres_prof = new JTextArea();
+		
 	}
 	
 	public void setLayoutPanel() {
@@ -121,6 +119,10 @@ public class PlaneacionBoard extends JPanel {
 		add(actual,gc);
 		/////////////////////////////////
 
+		
+		gc.gridy++;
+		gc.gridwidth = 2;
+		add(semestres_prof,gc);
 	}
 	
 	

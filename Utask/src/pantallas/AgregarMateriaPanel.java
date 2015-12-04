@@ -129,8 +129,7 @@ public void setLayoutPanel(){
 	gc.ipadx = 200;
 	gc.insets = new Insets(0, 0, 0, 40);
 	add(horarioLinea, gc);
-
-
+	
 	gc.gridy++;
 	gc.ipadx = 0;
 	gc.gridx = 0;

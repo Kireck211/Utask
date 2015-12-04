@@ -25,7 +25,7 @@ public class AgregarProfesorPanel extends JPanel {
 	private JTextArea departamentoLinea;
 	private JButton ok;
 	private JButton cancel;
-
+	
 public AgregarProfesorPanel() {
 	setBackground(new Color(255, 255, 255));
 	setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
@@ -50,7 +50,6 @@ public AgregarProfesorPanel() {
 	cancel.setContentAreaFilled(false);
 	ok.setBorderPainted(false);
 	cancel.setBorderPainted(false);
-	
 	
 	setLayoutPanel();
 
@@ -114,9 +113,7 @@ public void setLayoutPanel(){
 	gc.ipadx = 200;
 	gc.insets = new Insets(0, 0, 0, 40);
 	add(departamentoLinea, gc);
-
-
-
+	
 	gc.gridy++;
 	gc.ipadx = 0;
 	gc.gridx = 0;

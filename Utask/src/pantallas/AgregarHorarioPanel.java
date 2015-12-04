@@ -20,7 +20,8 @@ public class AgregarHorarioPanel extends JPanel {
 	
 	private JLabel nombre;
 	private JTextArea nombreLinea;
-	
+	private JButton ok;
+	private JButton cancel;
 
 	public AgregarHorarioPanel() {
 		Font verdana = new Font("Verdana", Font.PLAIN, 12);
@@ -28,6 +29,13 @@ public class AgregarHorarioPanel extends JPanel {
 		nombre.setFont(verdana);
 		nombreLinea = new JTextArea();
 		nombreLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+		ok = new JButton(new ImageIcon("ok.png"));
+		cancel = new JButton(new ImageIcon("cancel.png"));
+		
+		ok.setContentAreaFilled(false);
+		cancel.setContentAreaFilled(false);
+		ok.setBorderPainted(false);
+		cancel.setBorderPainted(false);
 		/*nombreArea = new JTextArea();
 		
 			}
@@ -71,13 +79,13 @@ public class AgregarHorarioPanel extends JPanel {
 
 		///////// Next row ///////
 		gc.gridy++;
-		gc.gridx = 0;
 		gc.ipadx = 0;
-		gc.insets = new Insets(0, 0, 0, 0);
-//		add(ok, gc);
+		gc.gridx = 0;
+		gc.anchor = GridBagConstraints.CENTER;
+		add(ok,gc);
 		
 		gc.gridx = 1;
-//		add(cancel, gc);
+		add(cancel,gc);
 
 	}
 }

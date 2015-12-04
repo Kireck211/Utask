@@ -54,7 +54,6 @@ public AgregarSemestrePanel() {
 	materiasLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
 	activoLinea = new JTextArea();
 	activoLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
-	
 	ok = new JButton(new ImageIcon("ok.png"));
 	cancel = new JButton(new ImageIcon("cancel.png"));
 	
@@ -149,7 +148,6 @@ public void setLayoutPanel(){
 	gc.insets = new Insets(0, 0, 0, 40);
 	add(duracionLinea, gc);
 
-	
 	gc.gridy++;
 	gc.ipadx = 0;
 	gc.gridx = 0;
@@ -158,7 +156,5 @@ public void setLayoutPanel(){
 	
 	gc.gridx = 1;
 	add(cancel,gc);
-
-	
 }
 }
