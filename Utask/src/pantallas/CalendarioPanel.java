@@ -33,7 +33,7 @@ public class CalendarioPanel extends JPanel{
 		editar.setContentAreaFilled(false);
 		editar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				new EditarPersona();
+				new EditarPersona().setVisible(true);;
 			}
 			
 		});

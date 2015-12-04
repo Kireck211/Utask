@@ -33,7 +33,7 @@ public class AjustesPanel extends JPanel {
 		setLayoutPanel();
 		editar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new EditarPersona();
+				new EditarPersona().setVisible(true);;
 			}
 			
 		});
