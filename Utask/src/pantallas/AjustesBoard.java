@@ -35,45 +35,61 @@ public class AjustesBoard extends JPanel {
 		
 		botones = new JButton[4];
 		botones[0] = examenes;
-		botones[1] = horario;
-		botones[2] = tareas;
+		botones[1] = tareas;
+		botones[2] = horario;
 		botones[3] = preestablecido;
 		
 		examenes.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				morstrarUno(0);
+				if (botones[3].isVisible())
+					mostrarUno(0);
+				else
+					mostrarUno(4); // Se muestran todos
+				
 			}
 		});
 		
 		tareas.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				morstrarUno(1);
+				if (botones[2].isVisible())
+					mostrarUno(1);
+				else
+					mostrarUno(4); // Se muestran todos
 			}
 		});
 		
 		horario.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				morstrarUno(2);
+				if (botones[0].isVisible())
+					mostrarUno(2);
+				else
+					mostrarUno(4); // Se muestran todos
 			}
 		});
 		
 		preestablecido.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
-				morstrarUno(3);
+				if (botones[2].isVisible())
+					mostrarUno(3);
+				else
+					mostrarUno(4); // Se muestran todos
 			}
 		});
 	}
 
-	public void morstrarUno(int lugar){
+	public void mostrarUno(int lugar){
 		switch(lugar){
 		case 0:
-			for(int i = 0;i<4;i++){
-				botones[i].setVisible(true);;
+			botones[0].setVisible(true);
+			for(int i =0;i<4;i++){
+				if (i==0)
+					continue;
+				botones[i].setVisible(false);
 			}
 			break;
 		case 1:
 			botones[1].setVisible(true);
-			for(int i = 0;i<4;i++){
+			for(int i =0;i<4;i++){
 				if (i==1)
 					continue;
 				botones[i].setVisible(false);
@@ -81,20 +97,24 @@ public class AjustesBoard extends JPanel {
 			break;
 		case 2:
 			botones[2].setVisible(true);
-			for(int i = 0;i<4;i++){
+			for(int i =0;i<4;i++){
 				if (i==2)
 					continue;
 				botones[i].setVisible(false);
 			}
 			break;
-		default:
+		case 3:
 			botones[3].setVisible(true);
-			for(int i = 0;i<4;i++){
+			for(int i =0;i<4;i++){
 				if (i==3)
 					continue;
 				botones[i].setVisible(false);
 			}
 			break;
+		default:
+			for(int i =0;i<4;i++){
+				botones[i].setVisible(true);
+			}
 		};
 	}
 	
