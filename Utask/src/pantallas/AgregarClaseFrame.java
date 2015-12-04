@@ -16,7 +16,7 @@ private JPanel clase;
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-		setUndecorated(true);
+//		setUndecorated(true);
 		
 		setLayout(new BorderLayout());
 		add(clase);

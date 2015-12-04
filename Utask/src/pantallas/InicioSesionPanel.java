@@ -45,8 +45,6 @@ public class InicioSesionPanel extends JPanel {
 		olvidar = new JButton(new ImageIcon("Olvidar.png"));
 		olvidar.setBorder(null);
 		olvidar.setContentAreaFilled(false);
-	
-	
 		setLayoutInicio();
 		
 		setActionListenersButtons();
@@ -70,7 +68,6 @@ public class InicioSesionPanel extends JPanel {
 					JOptionPane.showMessageDialog(null, "El usuario y/o contraseña están vacios");
 				}
 			}
-			
 		});
 		
 		registrarse.addActionListener(new ActionListener() {
@@ -82,7 +79,10 @@ public class InicioSesionPanel extends JPanel {
 		
 		olvidar.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
-				JOptionPane.showInputDialog(null, "Escriba el correo electrónico por favor, para reestablecer la contraseña.");
+				String correo = JOptionPane.showInputDialog(null, "Escriba el correo electrónico por favor, para reestablecer la contraseña.");
+				while(!correo.contains("@")){
+					correo = JOptionPane.showInputDialog("Escriba un correo electrónico válido por favor.");
+				}
 			}
 		});
 	}
