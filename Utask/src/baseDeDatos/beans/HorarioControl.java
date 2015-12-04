@@ -22,7 +22,7 @@ public class HorarioControl {
 		try {
 			statement = conn.createStatement();
 			sql = "INSERT INTO horario(nombre) " + "VALUES ('" + horario.getNombre() + "')";
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

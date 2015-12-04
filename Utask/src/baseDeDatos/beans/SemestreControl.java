@@ -28,7 +28,7 @@ public class SemestreControl {
 					+ semestre.getInicio().getMonth() + "," + semestre.getInicio().getYear() + ","
 					+ semestre.getFin().getDay() + "," + semestre.getFin().getMonth() + ","
 					+ semestre.getFin().getYear() + ",'" + semestre.isActivo() + "')";
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

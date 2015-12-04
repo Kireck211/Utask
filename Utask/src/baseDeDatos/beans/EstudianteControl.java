@@ -23,7 +23,7 @@ public class EstudianteControl {
 			statement = conn.createStatement();
 			sql = "INSERT INTO estudiante(nombre, carrera, email) " + "VALUES ('" + estudiante.getNombre() + "','"
 					+ estudiante.getCarrera() + "','" + estudiante.getEmail() + "')";
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

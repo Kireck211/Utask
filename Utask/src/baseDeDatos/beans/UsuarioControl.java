@@ -21,9 +21,9 @@ public class UsuarioControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "INSERT INTO usuario(nickname, contrasenha) " + "VALUES ('" + usuario.getNickName() + "','"
+			sql = "INSERT INTO usuario (nickname, contrasenha) " + "VALUES ('" + usuario.getNickName() + "','"
 					+ usuario.getContrasenha() + "')";
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

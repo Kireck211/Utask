@@ -28,7 +28,7 @@ public class ClaseControl {
 					+ clase.getInicio().getMonth() + "','" + clase.getInicio().getYear() + "','"
 					+ clase.getFin().getDay() + "','" + clase.getFin().getMonth() + "','" + clase.getFin().getYear()
 					+ "','" + clase.getUbicacion() + "')";
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

@@ -28,7 +28,7 @@ public class ExamenControl {
 					+ examen.getInicio().getMonth() + "," + examen.getInicio().getDay() + ","
 					+ examen.getFin().getYear() + "," + examen.getFin().getMonth() + "," + examen.getFin().getDay()
 					+ ",'" + examen.getUbicacion() + "')";
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

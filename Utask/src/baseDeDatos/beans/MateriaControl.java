@@ -22,7 +22,7 @@ public class MateriaControl {
 		try {
 			statement = conn.createStatement();
 			sql = "INSERT INTO materia(nombre) " + "VALUES ('" + materia.getNombre() + "')";
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

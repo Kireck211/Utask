@@ -24,7 +24,7 @@ public class ProfesorControl {
 			sql = "INSERT INTO profesor(nombre, email, departamento, materia, telefono) " + "VALUES ('"
 					+ profesor.getNombre() + "','" + profesor.getEmail() + "','" + profesor.getDepartamento() + "','"
 					+ profesor.getMateria() + "'," + profesor.getTelefono() + ")";
-			statement.executeQuery(sql);
+			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
