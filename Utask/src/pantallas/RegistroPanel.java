@@ -6,15 +6,18 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import baseDeDatos.beans.Usuario;
+import baseDeDatos.beans.UsuarioControl;
 
 public class RegistroPanel extends JPanel {
 	private JLabel nombre;
@@ -49,6 +52,8 @@ public class RegistroPanel extends JPanel {
 		this.inicioFrame = inicioFrame;
 		this.registroFrame = registroFrame;
 
+		final UsuarioControl uc = new UsuarioControl(App.conn);
+
 		setLayoutRegistro();
 
 		cancel.addActionListener(new ActionListener() {
@@ -57,13 +62,23 @@ public class RegistroPanel extends JPanel {
 				registroFrame.setVisible(false);
 			}
 		});
-		
+
 		ok.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String nombre = nombreArea.getText();
-				String contrasenha = contraArea.getText();
+				String contra = contraArea.getText();
+				if (nombre.length() != 0 && contra.length() != 0) {
+					Usuario usuario = new Usuario();
+					usuario.setNickName(nombreArea.getText());
+					usuario.setContrasenha(contraArea.getText());
+					uc.insertUsuario(usuario);
+					inicioFrame.setEnabled(true);
+					registroFrame.setVisible(false);
+				} else {
+					JOptionPane.showMessageDialog(null, "Escriba el usuario y contraseña por favor");
+				}
 			}
-			
+
 		});
 	}
 
@@ -75,7 +90,7 @@ public class RegistroPanel extends JPanel {
 		gc.weighty = 5;
 		gc.gridx = 0;
 		gc.gridy = 0;
-//		gc.anchor= GridBagConstraints.LINE_;
+		// gc.anchor= GridBagConstraints.LINE_;
 		add(nombre, gc);
 
 		gc.gridx = 1;
@@ -90,8 +105,8 @@ public class RegistroPanel extends JPanel {
 		gc.gridx = 0;
 		gc.ipadx = 0;
 		gc.insets = new Insets(0, 0, 0, 0);
-		add(contrasenha,gc);
-		
+		add(contrasenha, gc);
+
 		gc.gridx = 1;
 		gc.ipadx = 180;
 		gc.insets = new Insets(0, 0, 0, 20);
@@ -103,7 +118,7 @@ public class RegistroPanel extends JPanel {
 		gc.ipadx = 0;
 		gc.insets = new Insets(0, 0, 0, 0);
 		add(ok, gc);
-		
+
 		gc.gridx = 1;
 		add(cancel, gc);
 

@@ -4,9 +4,10 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.JobAttributes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Vector;
+import java.sql.Connection;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -15,6 +16,10 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import baseDeDatos.beans.Usuario;
+import baseDeDatos.beans.UsuarioControl;
+import baseDeDatos.database.MyConnection;
 
 public class InicioSesionPanel extends JPanel {
 	private JLabel icono;
@@ -52,17 +57,32 @@ public class InicioSesionPanel extends JPanel {
 	}
 	
 	public void setActionListenersButtons() {
+		Connection conn = null;
+		try {
+			conn = MyConnection.getInstance();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		final UsuarioControl uc = new UsuarioControl(conn);
 		inicio.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				if (nameArea.getText().length()!=0 && contrasenhaArea.getText().length()!=0) {
-					String name = nameArea.getText();
-					String contrasenha = contrasenhaArea.getText();
-					if (name.equals("Utask")&&contrasenha.equals("Utask")){
-						desplegarPantallaMain();
+					Usuario usuario = new Usuario();
+					usuario.setNickName(nameArea.getText());
+					usuario.setContrasenha(contrasenhaArea.getText());
+					if(uc.buscarUsuario(usuario)){
+						if (uc.verificarContrasenha(usuario)){
+							desplegarPantallaMain();
+						}
+						else{
+							JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrectos", "ERROR", JOptionPane.ERROR_MESSAGE);
+						}
 					}
 					else {
-						JOptionPane.showMessageDialog(null, "Usuario y/o contraseña incorrecta.");
+						JOptionPane.showMessageDialog(null, "No se encuentra registrado, por favor regístrece", "No existe registro", JOptionPane.WARNING_MESSAGE);
 					}
+					
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "El usuario y/o contraseña están vacios");

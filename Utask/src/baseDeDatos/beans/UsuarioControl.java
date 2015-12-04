@@ -14,6 +14,52 @@ public class UsuarioControl {
 		this.conn = conn;
 	}
 
+	public boolean verificarContrasenha(Usuario usuario) {
+		if (conn == null)
+			return false;
+		Statement statement = null;
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			statement = conn.createStatement();
+			sql = "SELECT * FROM usuario WHERE nickname = '" + usuario.getNickName() + "'";
+			rs = statement.executeQuery(sql);
+			if (rs.next()) {
+				String contra = rs.getString("contrasenha");
+				if (usuario.getContrasenha().equals(contra)) {
+					return true;
+				} else {
+					return false;
+				}
+			}
+			else 
+				return false;
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
+	public boolean buscarUsuario(Usuario usuario) {
+		if (conn == null)
+			return false;
+		Statement statement = null;
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			statement = conn.createStatement();
+			sql = "SELECT * FROM usuario WHERE nickname = '" + usuario.getNickName() + "'";
+			rs = statement.executeQuery(sql);
+			System.out.println(4 + "" + usuario.getNickName() + 4);
+			if (rs.next()) {
+				return true;
+			} else {
+				return false;
+			}
+		} catch (Exception e) {
+			return false;
+		}
+	}
+
 	public void insertUsuario(Usuario usuario) {
 		if (conn == null)
 			return;
