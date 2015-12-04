@@ -34,7 +34,7 @@ public class AgregarTareasPanel extends JPanel{
 	private String nombre_jp;
 	private String asignatura_jp;
 	private String descripcion_jp;
-
+	
 
 
 public AgregarTareasPanel() {
