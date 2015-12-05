@@ -6,7 +6,7 @@ public class ManejoFechas {
 	
 	public static void forLoop(int max, Vector<String>dias) {
 		for(int i =0;i < max; i++) {
-			dias.addElement(((Integer)i).toString());
+			dias.addElement(((Integer)(i+1)).toString());
 		}
 	}
 	

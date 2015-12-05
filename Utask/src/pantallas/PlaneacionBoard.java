@@ -21,7 +21,7 @@ public class PlaneacionBoard extends JPanel {
 	private JPanel panelPlaneacion;
 	
 	
-	public PlaneacionBoard(){
+	public PlaneacionBoard(final MainFrame main, int idUsuario){
 		setBackground(new Color(255,255,255));
 		setAll();
 		quitarBordesBotones();
@@ -48,18 +48,20 @@ public class PlaneacionBoard extends JPanel {
 			
 		});
 		
+		semestres.doClick();
+		
 		mas.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
 				if (semestre_profesor == 1){
-					new AgregarSemestreFrame();
+					new AgregarSemestreFrame(main, idUsuario);
 				}
 				else {
 					new AgregarProfesorFrame();
 				}
-				new AgregarTareasFrame();
+				/*new AgregarTareasFrame();
 				new AgregarExamenFrame();
 				new AgregarClaseFrame();
-				new AgregarMateriaFrame();
+				new AgregarMateriaFrame();*/
 			}
 			
 		});

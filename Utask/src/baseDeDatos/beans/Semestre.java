@@ -6,13 +6,12 @@ import calendar.MyDate;
 import planeacion.Materia;
 
 public class Semestre {
-	
+
 	private int idSemestre;
-	private boolean activo;
+	private int activo;
 	private String nombre;
 	private MyDate inicio;
 	private MyDate fin;
-	private int duracion;
 
 	public int getIdSemestre() {
 		return idSemestre;
@@ -22,11 +21,11 @@ public class Semestre {
 		this.idSemestre = idSemestre;
 	}
 
-	public boolean isActivo() {
+	public int getActivo() {
 		return activo;
 	}
 
-	public void setActivo(boolean activo) {
+	public void setActivo(int activo) {
 		this.activo = activo;
 	}
 
@@ -52,14 +51,6 @@ public class Semestre {
 
 	public void setFin(MyDate fin) {
 		this.fin = fin;
-	}
-
-	public int getDuracion() {
-		return duracion;
-	}
-
-	public void setDuracion(int duracion) {
-		this.duracion = duracion;
 	}
 
 	public Vector<Materia> getMaterias() {

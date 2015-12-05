@@ -15,7 +15,38 @@ public class SemestreControl {
 	public SemestreControl(Connection conn) {
 		this.conn = conn;
 	}
+	
+	public void insterUsuarioSemestre(int idUsuario, Semestre semestre) {
+		if (conn == null)
+			return;
+		Statement statement = null;
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			statement = conn.createStatement();
+			sql = "SELECT * FROM semestre WHERE nombre = '" + semestre.getNombre() +"'";
+			rs = statement.executeQuery(sql);
+			if (rs.next()) {
+				int idSemestre = rs.getInt("idSemestre");
+				sql = "INSERT INTO usuario-semestre(idUsuario, idSemestre) "
+				+ "VALUES (" + idUsuario + "," + idSemestre+ ")";
+				statement.executeUpdate(sql);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
 
+				} finally {
+					sql = null;
+				}
+			}
+		}
+	}
+	
 	public void insertSemestre(Semestre semestre) {
 		if (conn == null)
 			return;
@@ -27,7 +58,7 @@ public class SemestreControl {
 					+ "VALUES ('" + semestre.getNombre() + "'," + semestre.getInicio().getDay() + ","
 					+ semestre.getInicio().getMonth() + "," + semestre.getInicio().getYear() + ","
 					+ semestre.getFin().getDay() + "," + semestre.getFin().getMonth() + ","
-					+ semestre.getFin().getYear() + ",'" + semestre.isActivo() + "')";
+					+ semestre.getFin().getYear() + ",'" + semestre.getActivo() + "')";
 			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -58,7 +89,7 @@ public class SemestreControl {
 				s.setNombre(rs.getString(2));
 				s.setInicio(new MyDate(rs.getInt(3), rs.getInt(4), rs.getInt(5)));
 				s.setFin(new MyDate(rs.getInt(6), rs.getInt(7), rs.getInt(8)));
-				s.setActivo(rs.getBoolean(9));
+				s.setActivo(rs.getInt(9));
 				/*
 				 * p.setIdEmployee(rs.getInt(1)); p.setName(rs.getString(2));
 				 * p.setPhone(rs.getString(3)); p.setDepto(rs.getInt(4));
@@ -113,7 +144,7 @@ public class SemestreControl {
 			statement.setInt(5, semestre.getFin().getDay());
 			statement.setInt(6, semestre.getFin().getMonth());
 			statement.setInt(7, semestre.getFin().getYear());
-			statement.setBoolean(8, semestre.isActivo());
+			statement.setInt(8, semestre.getActivo());
 			statement.setInt(9, semestre.getIdSemestre());
 			statement.executeUpdate();
 		} catch (SQLException e) {

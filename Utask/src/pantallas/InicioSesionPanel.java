@@ -4,9 +4,10 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
-import java.awt.JobAttributes;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.sql.Connection;
 
 import javax.swing.BorderFactory;
@@ -53,6 +54,53 @@ public class InicioSesionPanel extends JPanel {
 		olvidar.setContentAreaFilled(false);
 		usuario = new Usuario();
 		
+		
+		nameArea.addKeyListener(new KeyListener() {
+
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				int key = arg0.getKeyCode();
+				if (key == KeyEvent.VK_TAB) {
+					contrasenhaLabel.transferFocus();
+				}
+			}
+
+			@Override
+			public void keyReleased(KeyEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void keyTyped(KeyEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+		});
+		
+		contrasenhaArea.addKeyListener(new KeyListener() {
+			
+			@Override
+			public void keyTyped(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyReleased(KeyEvent e) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				int key = e.getKeyCode();
+				if (key == KeyEvent.VK_ENTER)
+					inicio.doClick();
+			}
+		});
+		
 		setLayoutInicio();
 		setActionListenersButtons();
 		this.ventana = ventana;
@@ -67,11 +115,13 @@ public class InicioSesionPanel extends JPanel {
 			e.printStackTrace();
 		}
 		final UsuarioControl uc = new UsuarioControl(conn);
+		
 		inicio.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				if (nameArea.getText().length()!=0 && contrasenhaArea.getText().length()!=0) {
-					usuario.setNickName(nameArea.getText());
-					usuario.setContrasenha(contrasenhaArea.getText());
+					
+					usuario.setNickName(nameArea.getText().replaceAll("\t", ""));
+					usuario.setContrasenha(contrasenhaArea.getText().replaceAll("\n", ""));
 					if(uc.buscarUsuario(usuario)){
 						if (uc.verificarContrasenha(usuario)){
 							desplegarPantallaMain();
