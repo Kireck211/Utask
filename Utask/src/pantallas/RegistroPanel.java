@@ -64,16 +64,21 @@ public class RegistroPanel extends JPanel {
 		});
 
 		ok.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
+			public void actionPerformed(ActionEvent arg0) {
 				String nombre = nombreArea.getText();
 				String contra = contraArea.getText();
 				if (nombre.length() != 0 && contra.length() != 0) {
 					Usuario usuario = new Usuario();
 					usuario.setNickName(nombreArea.getText());
 					usuario.setContrasenha(contraArea.getText());
-					uc.insertUsuario(usuario);
-					inicioFrame.setEnabled(true);
-					registroFrame.setVisible(false);
+					if (!uc.insertUsuario(usuario)) {
+						JOptionPane.showMessageDialog(null, "Ya se encuentra registrado", "REGISTRADO",
+								JOptionPane.WARNING_MESSAGE);
+					}
+					else {
+						inicioFrame.setEnabled(true);
+						registroFrame.setVisible(false);
+					}
 				} else {
 					JOptionPane.showMessageDialog(null, "Escriba el usuario y contraseña por favor");
 				}

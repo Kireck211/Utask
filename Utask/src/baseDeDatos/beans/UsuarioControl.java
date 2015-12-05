@@ -31,8 +31,7 @@ public class UsuarioControl {
 				} else {
 					return false;
 				}
-			}
-			else 
+			} else
 				return false;
 		} catch (Exception e) {
 			return false;
@@ -60,9 +59,9 @@ public class UsuarioControl {
 		}
 	}
 
-	public void insertUsuario(Usuario usuario) {
+	public boolean insertUsuario(Usuario usuario) {
 		if (conn == null)
-			return;
+			return false;
 		Statement statement = null;
 		String sql = null;
 		try {
@@ -70,8 +69,9 @@ public class UsuarioControl {
 			sql = "INSERT INTO usuario (nickname, contrasenha) " + "VALUES ('" + usuario.getNickName() + "','"
 					+ usuario.getContrasenha() + "')";
 			statement.executeUpdate(sql);
+			return true;
 		} catch (SQLException e) {
-			e.printStackTrace();
+			return false;
 		} finally {
 			if (statement != null) {
 				try {
