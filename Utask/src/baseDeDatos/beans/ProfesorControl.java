@@ -14,6 +14,30 @@ public class ProfesorControl {
 		this.conn = conn;
 	}
 
+	public void insertMateriaProfesor(int idMateria, int idProfesor){
+		if (conn == null)
+		return;
+	Statement statement = null;
+	String sql = null;
+	try {
+		statement = conn.createStatement();
+		sql = "INSERT INTO materiaprofesor(idmateria, idprofesor) " + "VALUES (" + idMateria + "," + idProfesor+ ")";
+		statement.executeUpdate(sql);
+	} catch (SQLException e) {
+		e.printStackTrace();
+	} finally {
+		if (statement != null) {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+
+			} finally {
+				sql = null;
+			}
+		}
+	}
+	}
+	
 	public void insertProfesor(Profesor profesor) {
 		if (conn == null)
 			return;
@@ -21,9 +45,9 @@ public class ProfesorControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "INSERT INTO profesor(nombre, email, departamento, materia, telefono) " + "VALUES ('"
-					+ profesor.getNombre() + "','" + profesor.getEmail() + "','" + profesor.getDepartamento() + "','"
-					+ profesor.getMateria() + "'," + profesor.getTelefono() + ")";
+			sql = "INSERT INTO profesor(nombre, email, departamento, telefono) " + "VALUES ('" + profesor.getNombre()
+					+ "','" + profesor.getEmail() + "','" + profesor.getDepartamento() + "'," + profesor.getTelefono()
+					+ ")";
 			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();

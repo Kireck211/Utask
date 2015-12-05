@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class TareasBoard extends JPanel{
@@ -19,7 +20,7 @@ public class TareasBoard extends JPanel{
 	private JButton mas;
 	private JPanel panelTareas;
 	
-	public TareasBoard() {
+	public TareasBoard(final JFrame main, final int idUsuario) {
 	
 	setBackground(new Color(255,255,255));
 	actuales = new JButton(new ImageIcon("actuales.png"));
@@ -42,7 +43,7 @@ public class TareasBoard extends JPanel{
 	
 	mas.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e) {
-			new AgregarTareasFrame();
+			new AgregarTareasFrame(main,idUsuario);
 		}
 		
 	});

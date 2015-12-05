@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 public class PanelBoard extends JPanel {
 	private JLabel background;
 	
-	public PanelBoard() {
+	public PanelBoard(int idUsuario) {
 		setBackground(new Color(255,255,255));
 		background = new JLabel(new ImageIcon("UTask.png"));
 		setLayout(new GridBagLayout());

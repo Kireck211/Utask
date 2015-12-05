@@ -37,9 +37,9 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void setAll() {
-		board[0] = new PanelBoard();
-		board[1] = new CalendarioBoard();
-		board[2] = new TareasBoard();
+		board[0] = new PanelBoard(usuario.getIdUsuario());
+		board[1] = new CalendarioBoard(this,usuario.getIdUsuario());
+		board[2] = new TareasBoard(this,usuario.getIdUsuario());
 		board[3] = new PlaneacionBoard(this, usuario.getIdUsuario());
 		board[4] = new AjustesBoard();
 

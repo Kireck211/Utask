@@ -9,15 +9,16 @@ public class AgregarTareasFrame extends JFrame {
 	
 	private JPanel tareas;
 	
-	public AgregarTareasFrame() {
+	public AgregarTareasFrame(JFrame main, int idUsuario) {
 
-		tareas = new AgregarTareasPanel();
+		main.setEnabled(false);
+		tareas = new AgregarTareasPanel(main, this, idUsuario);
 
 		setSize(700, 600);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-//		setUndecorated(true);
+		setUndecorated(true);
 		
 		setLayout(new BorderLayout());
 		add(tareas);
