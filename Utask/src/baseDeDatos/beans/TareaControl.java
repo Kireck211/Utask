@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Vector;
 
 public class TareaControl {
 	private Connection conn;
@@ -73,10 +74,30 @@ public class TareaControl {
 			}
 		}
 	}
+	
+	public Vector<Integer> getIdTareas(int idUsuario) {
+		Vector<Integer> idTareas = new Vector<>();
+		
+		String sql = "SELECT * FROM usuariotarea WHERE idusuario = "+idUsuario;
+		Statement statement = null;
+		ResultSet rs = null;
+		try {
+			statement = conn.createStatement();
+			rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				idTareas.add(rs.getInt("idtarea"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+		}
+		
+		return idTareas;
+	}
 
-	public ArrayList<Tarea> getTareas(int idTarea) {
+	public Vector<Tarea> getTareas(int idTarea) {
 
-		ArrayList<Tarea> tareas = new ArrayList<Tarea>();
+		Vector<Tarea> tareas = new Vector<Tarea>();
 		String sql = "SELECT * FROM tarea WHERE idtarea = "+ idTarea;
 		Statement statement = null;
 		ResultSet rs = null;

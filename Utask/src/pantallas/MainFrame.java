@@ -10,9 +10,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import org.omg.IOP.TAG_ALTERNATE_IIOP_ADDRESS;
+
 import baseDeDatos.beans.Clase;
+import baseDeDatos.beans.ClaseControl;
 import baseDeDatos.beans.Semestre;
+import baseDeDatos.beans.SemestreControl;
 import baseDeDatos.beans.Tarea;
+import baseDeDatos.beans.TareaControl;
 import baseDeDatos.beans.Usuario;
 
 public class MainFrame extends JFrame {
@@ -22,10 +27,15 @@ public class MainFrame extends JFrame {
 	private JPanel board_relative;
 	private JPanel header;
 	private Usuario usuario;
+	private Vector<Semestre> semestre;
+	private Vector<Tarea> tareas;
+	private Vector<Clase> clases;
+	
 
 	public MainFrame(Usuario usuario) {
 		this.usuario = usuario;
 		getContentPane().setBackground(new Color(255, 255, 255));
+		cargarTodo();
 		setAll();
 
 
@@ -41,19 +51,52 @@ public class MainFrame extends JFrame {
 	}
 	
 	public void cargarTodo(){
-		Vector<Semestre> semestres = new Vector<>();
-		Vector<Clase> clases = new Vector<>();
-		Vector<Tarea> tareas = new Vector<>();
-		Vector<Integer> idSemestre = new Vector<>();
+		Vector<Semestre> semestres_temp = new Vector<>();
+		semestre = new Vector<>();
+		Vector<Clase> clases_temp = new Vector<>();
+		clases = new Vector<>();
+		Vector<Tarea> tareas_temp = new Vector<>();
+		tareas = new Vector<>();
+		Vector<Integer> idSemestres = new Vector<>();
 		Vector<Integer> idClases = new Vector<>();
 		Vector<Integer> idTareas = new Vector<>();
+		SemestreControl sc = new SemestreControl(App.conn);
+		ClaseControl cc = new ClaseControl(App.conn);
+		TareaControl tc = new TareaControl(App.conn);
+		idSemestres = sc.getIdSemestres(usuario.getIdUsuario());
+		idClases = cc.getIdClase(usuario.getIdUsuario());
+		idTareas = tc.getIdTareas(usuario.getIdUsuario());
 		
+		while(!idSemestres.isEmpty()){
+			Integer semester = idSemestres.remove(0);
+			semestres_temp = sc.getSemestres(semester);
+			while(!semestres_temp.isEmpty()){
+				semestre.addElement(semestres_temp.remove(0));
+			}
+		}
+		
+		while(!idClases.isEmpty()){
+			Integer clase = idClases.remove(0);
+			clases_temp = cc.getClases(clase);
+			while(!clases_temp.isEmpty()){
+				clases.addElement(clases_temp.remove(0));
+			}
+		}
+		
+		while(!idTareas.isEmpty()){
+			Integer tarea = idTareas.remove(0);
+			tareas_temp = tc.getTareas(tarea);
+			while(!tareas_temp.isEmpty()){
+				tareas.addElement(tareas_temp.remove(0));
+			}
+			
+		}
 	}
 	
 	public void setAll() {
 		board[0] = new PanelBoard(usuario.getIdUsuario());
 		board[1] = new CalendarioBoard(this,usuario.getIdUsuario());
-		board[2] = new TareasBoard(this,usuario.getIdUsuario());
+		board[2] = new TareasBoard(tareas,this,usuario.getIdUsuario());
 		board[3] = new PlaneacionBoard(this, usuario.getIdUsuario());
 		board[4] = new AjustesBoard();
 

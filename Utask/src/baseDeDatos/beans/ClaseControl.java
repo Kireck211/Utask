@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import calendar.MyDateTime;
 
@@ -75,9 +76,29 @@ public class ClaseControl {
 			}
 		}
 	}
+	
+	public Vector<Integer> getIdClase(int idUsuario) {
+		Vector<Integer> idClases = new Vector<>();
+		
+		String sql = "SELECT * FROM usuarioclase WHERE idusuario = "+idUsuario;
+		Statement statement = null;
+		ResultSet rs = null;
+		try {
+			statement = conn.createStatement();
+			rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				idClases.add(rs.getInt("idclase"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+		}
+		
+		return idClases;
+	}
 
-	public ArrayList<Clase> getClases(int idClase) {
-		ArrayList<Clase> clases = new ArrayList<Clase>();
+	public Vector<Clase> getClases(int idClase) {
+		Vector<Clase> clases = new Vector<Clase>();
 		String sql = "SELECT * FROM clase WHERE idClase =" + idClase;
 		Statement statement = null;
 		ResultSet rs = null;
@@ -88,9 +109,14 @@ public class ClaseControl {
 				Clase c = new Clase();
 				c.setIdClase(rs.getInt(1));
 				c.setNombre(rs.getString(2));
-				c.setInicio(new MyDateTime(rs.getInt(3), rs.getInt(4), rs.getInt(5)));
-				c.setFin(new MyDateTime(rs.getInt(6), rs.getInt(7), rs.getInt(8)));
-				c.setUbicacion(rs.getString(9));
+				c.setUbicacion(rs.getString(3));
+				c.setLunes(rs.getInt(4));
+				c.setMartes(rs.getInt(5));
+				c.setMiercoles(rs.getInt(6));
+				c.setJueves(rs.getInt(7));
+				c.setViernes(rs.getInt(8));
+				c.setSabado(rs.getInt(9));
+				c.setDomingo(rs.getInt(10));
 				clases.add(c);
 			}
 		} catch (SQLException e) {

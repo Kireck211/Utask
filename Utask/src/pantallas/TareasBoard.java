@@ -6,11 +6,15 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import baseDeDatos.beans.Tarea;
 
 public class TareasBoard extends JPanel{
 	private JButton actuales;
@@ -19,9 +23,10 @@ public class TareasBoard extends JPanel{
 	private JButton asignatura;
 	private JButton mas;
 	private JPanel panelTareas;
+	private Vector<Tarea> tareas;
 	
-	public TareasBoard(final JFrame main, final int idUsuario) {
-	
+	public TareasBoard(Vector<Tarea> tareas,final JFrame main, final int idUsuario) {
+	this.tareas = tareas;
 	setBackground(new Color(255,255,255));
 	actuales = new JButton(new ImageIcon("actuales.png"));
 	completadas = new JButton(new ImageIcon("completadas.png"));
@@ -40,16 +45,46 @@ public class TareasBoard extends JPanel{
 	mas.setContentAreaFilled(false);
 	
 	panelTareas = new JPanel();
+	panelTareas.setLayout(new GridBagLayout());
 	
+	
+	impresion();
 	mas.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e) {
 			new AgregarTareasFrame(main,idUsuario);
+			impresion();
 		}
 		
 	});
 	
 	setLayoutPanel();
 		
+	}
+	
+	public void impresion() {
+		int i = 0;
+		while(i<this.tareas.size()) {
+			Tarea tarea = this.tareas.get(i);
+			String nombre = tarea.getNombre();
+			String asignatura = tarea.getAsignatura();
+			String descripcion = tarea.getDescripcion();
+			boolean realizada;
+			if (tarea.getRealizada()==1){
+				realizada = true;
+			}
+			else {
+				realizada = false;
+			}
+			JLabel tarea_a= new JLabel("Nombre: "+ nombre.substring(0, 1).toUpperCase() + nombre.substring(1,nombre.length()) + "\tAsignatura: " + asignatura.substring(0, 1).toUpperCase() + asignatura.substring(1,asignatura.length()) + "\tDescripcion: " + descripcion.substring(0, 1).toUpperCase() + descripcion.substring(1,descripcion.length()) + "\tRealizada: " + realizada);
+			GridBagConstraints gc = new GridBagConstraints();
+			gc.fill = GridBagConstraints.HORIZONTAL;
+			gc.gridx = 0;
+			gc.gridy = i;
+			
+			
+			panelTareas.add(tarea_a,gc);
+			i++;
+		}
 	}
 	
 	public void setLayoutPanel() {

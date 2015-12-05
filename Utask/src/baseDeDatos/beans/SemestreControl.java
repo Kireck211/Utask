@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Vector;
 
 import calendar.MyDate;
 
@@ -76,9 +77,29 @@ public class SemestreControl {
 			}
 		}
 	}
+	
+	public Vector<Integer> getIdSemestres(int idUsuario) {
+		Vector<Integer> idSemestres = new Vector<>();
+		
+		String sql = "SELECT * FROM usuariosemestre WHERE idusuario = "+idUsuario;
+		Statement statement = null;
+		ResultSet rs = null;
+		try {
+			statement = conn.createStatement();
+			rs = statement.executeQuery(sql);
+			while (rs.next()) {
+				idSemestres.add(rs.getInt("idsemestre"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+		}
+		
+		return idSemestres;
+	}
 
-	public ArrayList<Semestre> getSemestres(int idSemestre) {
-		ArrayList<Semestre> semestres = new ArrayList<>();
+	public Vector<Semestre> getSemestres(int idSemestre) {
+		Vector<Semestre> semestres = new Vector<>();
 		String sql = "SELECT * FROM semestre WHERE idsemestre = "+idSemestre;
 		Statement statement = null;
 		ResultSet rs = null;

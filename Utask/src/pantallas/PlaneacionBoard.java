@@ -6,11 +6,20 @@ import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
+
+import baseDeDatos.beans.Clase;
+import baseDeDatos.beans.ClaseControl;
+import baseDeDatos.beans.Semestre;
+import baseDeDatos.beans.SemestreControl;
+import baseDeDatos.beans.Tarea;
+import baseDeDatos.beans.TareaControl;
 
 public class PlaneacionBoard extends JPanel {
 	private JButton semestres;
@@ -19,9 +28,12 @@ public class PlaneacionBoard extends JPanel {
 	private int semestre_profesor;
 	private JTextArea semestres_prof;
 	private JPanel panelPlaneacion;
+	private Vector<Semestre> semestre;
+	private int idUsuario;
 	
 	
 	public PlaneacionBoard(final MainFrame main, final int idUsuario){
+		this.idUsuario = idUsuario;
 		setBackground(new Color(255,255,255));
 		setAll();
 		quitarBordesBotones();
@@ -66,6 +78,48 @@ public class PlaneacionBoard extends JPanel {
 			
 		});
 		
+	}
+	
+	public void impresion() {
+		int i = 0;
+		while(i<this.semestre.size()) {
+			Semestre semestre = this.semestre.get(i);
+			String nombre = semestre.getNombre();
+//			String asignatura = semestre.getAsignatura();
+//			String descripcion = semestre.getDescripcion();
+			boolean activo;
+			if (semestre.getActivo()==1){
+				activo = true;
+			}
+			else {
+				activo = false;
+			}
+//			JLabel tarea_a= new JLabel("Nombre: "+ nombre.substring(0, 1).toUpperCase() + nombre.substring(1,nombre.length()) + "\tAsignatura: " + asignatura.substring(0, 1).toUpperCase() + asignatura.substring(1,asignatura.length()) + "\tDescripcion: " + descripcion.substring(0, 1).toUpperCase() + descripcion.substring(1,descripcion.length()) + "\tRealizada: " + realizada);
+			GridBagConstraints gc = new GridBagConstraints();
+			gc.fill = GridBagConstraints.HORIZONTAL;
+			gc.gridx = 0;
+			gc.gridy = i;
+			
+			
+//			panelPlaneacion.add(tarea_a,gc);
+			i++;
+		}
+	}
+	
+	public void cargarTodo(){
+		Vector<Semestre> semestres_temp = new Vector<>();
+		semestre = new Vector<>();
+		Vector<Integer> idSemestres = new Vector<>();
+		SemestreControl sc = new SemestreControl(App.conn);
+		idSemestres = sc.getIdSemestres(idUsuario);
+		
+		while(!idSemestres.isEmpty()){
+			Integer semester = idSemestres.remove(0);
+			semestres_temp = sc.getSemestres(semester);
+			while(!semestres_temp.isEmpty()){
+				semestre.addElement(semestres_temp.remove(0));
+			}
+		}
 	}
 	
 	public void quitarBordesBotones() {
