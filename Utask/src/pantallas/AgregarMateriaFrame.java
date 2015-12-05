@@ -8,11 +8,11 @@ import javax.swing.JPanel;
 public class AgregarMateriaFrame extends JFrame{
 	private JPanel materia;
 	
-	public AgregarMateriaFrame(JFrame agregarMateria,int idSemestre) {
+	public AgregarMateriaFrame(JFrame agregarMateria,int idUsuario) {
 		
 		agregarMateria.setEnabled(false);
 
-		materia = new AgregarMateriaPanel(this,agregarMateria,idSemestre);
+		materia = new AgregarMateriaPanel(this,agregarMateria,idUsuario);
 
 		setSize(700, 600);
 		setResizable(false);

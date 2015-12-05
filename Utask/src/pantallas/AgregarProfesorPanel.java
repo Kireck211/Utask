@@ -16,9 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import baseDeDatos.beans.Materia;
-import baseDeDatos.beans.Profesor;
-import baseDeDatos.beans.ProfesorControl;
+import baseDeDatos.beans.Tareas;
 
 public class AgregarProfesorPanel extends JPanel {
 	private JLabel titulo;
@@ -32,7 +30,7 @@ public class AgregarProfesorPanel extends JPanel {
 	private JTextArea departamentoLinea;
 	private JButton ok;
 	private JButton cancel;
-	public Profesor profesor;
+	public Tareas profesor;
 
 	public AgregarProfesorPanel(final JFrame agregarClase, final JFrame agregarProfesor, int id) {
 		setBackground(new Color(255, 255, 255));
@@ -53,7 +51,7 @@ public class AgregarProfesorPanel extends JPanel {
 		departamentoLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
 		ok = new JButton(new ImageIcon("ok.png"));
 		cancel = new JButton(new ImageIcon("cancel.png"));
-		profesor = new Profesor();
+		profesor = new Tareas();
 
 		ok.setContentAreaFilled(false);
 		cancel.setContentAreaFilled(false);
@@ -91,7 +89,7 @@ public class AgregarProfesorPanel extends JPanel {
 		departamentoLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
 		ok = new JButton(new ImageIcon("ok.png"));
 		cancel = new JButton(new ImageIcon("cancel.png"));
-		profesor = new Profesor();
+		profesor = new Tareas();
 
 		ok.setContentAreaFilled(false);
 		cancel.setContentAreaFilled(false);
@@ -118,8 +116,6 @@ public class AgregarProfesorPanel extends JPanel {
 				profesor.setEmail(emailLinea.getText());
 				profesor.setTelefono(Integer.parseInt(telefonoLinea.getText()));
 				profesor.setDepartamento(departamentoLinea.getText());
-				ProfesorControl pc = new ProfesorControl(App.conn);
-				pc.insertProfesor(profesor);
 				cancel.doClick();
 			}
 		});

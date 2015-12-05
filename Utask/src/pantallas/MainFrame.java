@@ -4,11 +4,15 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.Vector;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
+import baseDeDatos.beans.Clase;
+import baseDeDatos.beans.Semestre;
+import baseDeDatos.beans.Tarea;
 import baseDeDatos.beans.Usuario;
 
 public class MainFrame extends JFrame {
@@ -34,6 +38,16 @@ public class MainFrame extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		setVisible(true);
+	}
+	
+	public void cargarTodo(){
+		Vector<Semestre> semestres = new Vector<>();
+		Vector<Clase> clases = new Vector<>();
+		Vector<Tarea> tareas = new Vector<>();
+		Vector<Integer> idSemestre = new Vector<>();
+		Vector<Integer> idClases = new Vector<>();
+		Vector<Integer> idTareas = new Vector<>();
+		
 	}
 	
 	public void setAll() {

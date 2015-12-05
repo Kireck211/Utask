@@ -1,6 +1,6 @@
 package baseDeDatos.beans;
 
-public class Profesor {
+public class Tareas {
 	
 	private int idProfesor;
 	private String nombre;

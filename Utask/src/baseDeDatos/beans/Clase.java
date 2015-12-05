@@ -7,18 +7,22 @@ import planeacion.Examen;
 import planeacion.Profesor;
 
 public class Clase {
-	
+
 	private int idClase;
 	private String nombre;
 	private Vector<Profesor> profesores;
 	private MyDateTime inicio;
 	private MyDateTime fin;
 	private Repetir repeticion;
-	private boolean[] dSemana = new boolean[7];
+	private int lunes;
+	private int martes;
+	private int miercoles;
+	private int jueves;
+	private int viernes;
+	private int sabado;
+	private int domingo;
 	private String ubicacion;
 	private Vector<Examen> examenes;
-	
-	
 
 	public int getIdClase() {
 		return idClase;
@@ -84,12 +88,60 @@ public class Clase {
 		this.ubicacion = ubicacion;
 	}
 
-	public boolean[] getdSemana() {
-		return dSemana;
+	public int getLunes() {
+		return lunes;
 	}
 
-	public void setdSemana(boolean[] dSemana) {
-		this.dSemana = dSemana;
+	public void setLunes(int lunes) {
+		this.lunes = lunes;
+	}
+
+	public int getMartes() {
+		return martes;
+	}
+
+	public void setMartes(int martes) {
+		this.martes = martes;
+	}
+
+	public int getMiercoles() {
+		return miercoles;
+	}
+
+	public void setMiercoles(int miercoles) {
+		this.miercoles = miercoles;
+	}
+
+	public int getJueves() {
+		return jueves;
+	}
+
+	public void setJueves(int jueves) {
+		this.jueves = jueves;
+	}
+
+	public int getViernes() {
+		return viernes;
+	}
+
+	public void setViernes(int viernes) {
+		this.viernes = viernes;
+	}
+
+	public int getSabado() {
+		return sabado;
+	}
+
+	public void setSabado(int sabado) {
+		this.sabado = sabado;
+	}
+
+	public int getDomingo() {
+		return domingo;
+	}
+
+	public void setDomingo(int domingo) {
+		this.domingo = domingo;
 	}
 
 }

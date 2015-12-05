@@ -8,9 +8,9 @@ import javax.swing.JPanel;
 public class AgregarClaseFrame extends JFrame{
 private JPanel clase;
 	
-	public AgregarClaseFrame(final JFrame agregarMateria) {
+	public AgregarClaseFrame(final JFrame agregarMateria, int idUsuario) {
 
-		clase = new AgregarClasePanel(agregarMateria,this);
+		clase = new AgregarClasePanel(agregarMateria,this, idUsuario);
 
 		setSize(700, 600);
 		setResizable(false);

@@ -16,6 +16,39 @@ public class ClaseControl {
 		this.conn = conn;
 	}
 
+	public void insertUsuarioClase(int idUsuario, Clase clase) {
+		if (conn == null)
+			return;
+		Statement statement = null;
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			statement = conn.createStatement();
+			sql = "SELECT * FROM clase WHERE nombre = '" + clase.getNombre() +"'";
+			rs = statement.executeQuery(sql);
+			if (rs.next()) {
+				int idClase = rs.getInt("idclase");
+				sql = "INSERT INTO usuarioclase (idusuario,"+
+				"idclase) "
+				+ "VALUES"
+				+ "(" + idUsuario + "," + idClase+ ")";
+				statement.executeUpdate(sql);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+
+				} finally {
+					sql = null;
+				}
+			}
+		}
+	}
+
 	public void insertClase(Clase clase) {
 		if (conn == null)
 			return;
@@ -23,11 +56,10 @@ public class ClaseControl {
 		String sql = null;
 		try {
 			statement = conn.createStatement();
-			sql = "INSERT INTO clase (nombre, inicio_dia, inicio_mes, inicio_anho, fin_dia, fin_mes, fin_anho, ubicacion) "
-					+ "VALUES ('" + clase.getNombre() + "','" + clase.getInicio().getDay() + "','"
-					+ clase.getInicio().getMonth() + "','" + clase.getInicio().getYear() + "','"
-					+ clase.getFin().getDay() + "','" + clase.getFin().getMonth() + "','" + clase.getFin().getYear()
-					+ "','" + clase.getUbicacion() + "')";
+			sql = "INSERT INTO clase (nombre, ubicacion, lunes, martes, miercoles, jueves, viernes, sabado, domingo) "
+					+ "VALUES ('" + clase.getNombre() + "','" + clase.getUbicacion() + "'," + clase.getLunes() + ","
+					+ clase.getMartes() + "," + clase.getMiercoles() + "," + clase.getJueves() + ","
+					+ clase.getViernes() + "," + clase.getSabado() + "," + clase.getDomingo() + ")";
 			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -44,9 +76,9 @@ public class ClaseControl {
 		}
 	}
 
-	public ArrayList<Clase> getClases() {
+	public ArrayList<Clase> getClases(int idClase) {
 		ArrayList<Clase> clases = new ArrayList<Clase>();
-		String sql = "SELECT idClase, nombre, inicio_dia, inicio_mes, inicio_anho, fin_dia, fin_mes, fin_anho, ubicacion FROM clase";
+		String sql = "SELECT * FROM clase WHERE idClase =" + idClase;
 		Statement statement = null;
 		ResultSet rs = null;
 		try {

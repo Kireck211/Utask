@@ -79,7 +79,7 @@ public class AgregarSemestrePanel extends JPanel {
 		
 		agregaMateria.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new AgregarClaseFrame(agregarSemestre);
+				new AgregarClaseFrame(agregarSemestre, idUsuario);
 			}
 			
 		});

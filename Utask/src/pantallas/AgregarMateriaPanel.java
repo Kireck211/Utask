@@ -29,7 +29,7 @@ public class AgregarMateriaPanel extends JPanel{
 	private JButton mas;
 	private Materia materia;
 	
-public AgregarMateriaPanel(final JFrame agregarMateria, final JFrame agregarSemestre, final int idSemestre) {
+public AgregarMateriaPanel(final JFrame agregarMateria, final JFrame agregarSemestre, final int idUsuario) {
 	setBackground(new Color(255, 255, 255));
 	setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
 	setLayout(new BorderLayout());
@@ -54,7 +54,7 @@ public AgregarMateriaPanel(final JFrame agregarMateria, final JFrame agregarSeme
 	
 	mas.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
-			new AgregarClaseFrame(agregarMateria);
+			new AgregarClaseFrame(agregarMateria,idUsuario);
 		}
 	});
 	
@@ -63,7 +63,7 @@ public AgregarMateriaPanel(final JFrame agregarMateria, final JFrame agregarSeme
 			materia.setNombre(nombreLinea.getText());
 			MateriaControl mc = new MateriaControl(App.conn);
 			mc.insertMateria(materia);
-			mc.insertUsuarioMateria(idSemestre, materia);
+			mc.insertUsuarioMateria(idUsuario, materia);
 			cancel.doClick();
 		}
 	});

@@ -77,9 +77,9 @@ public class SemestreControl {
 		}
 	}
 
-	public ArrayList<Semestre> getSemestres() {
+	public ArrayList<Semestre> getSemestres(int idSemestre) {
 		ArrayList<Semestre> semestres = new ArrayList<>();
-		String sql = "SELECT idSemestre, nombre, inicio_dia, inicio_mes, inicio_anho, fin_dia, fin_mes, fin_anho, activo FROM semestre";
+		String sql = "SELECT * FROM semestre WHERE idsemestre = "+idSemestre;
 		Statement statement = null;
 		ResultSet rs = null;
 		try {

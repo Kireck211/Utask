@@ -17,6 +17,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import baseDeDatos.beans.Tarea;
+import baseDeDatos.beans.TareaControl;
+
 public class AgregarTareasPanel extends JPanel {
 	private JLabel titulo;
 	private JLabel asignatura;
@@ -29,6 +32,7 @@ public class AgregarTareasPanel extends JPanel {
 	private JCheckBox realizadaCheck;
 	private JButton ok;
 	private JButton cancel;
+	private Tarea tarea;
 
 	public AgregarTareasPanel(final JFrame main, final JFrame agregarTareas, final int idUsuario) {
 		setBackground(new Color(255, 255, 255));
@@ -51,12 +55,31 @@ public class AgregarTareasPanel extends JPanel {
 		GridBagConstraints gc = new GridBagConstraints();
 		ok = new JButton(new ImageIcon("ok.png"));
 		cancel = new JButton(new ImageIcon("cancel.png"));
+		tarea = new Tarea();
 
 		ok.setContentAreaFilled(false);
 		cancel.setContentAreaFilled(false);
 		ok.setBorderPainted(false);
 		cancel.setBorderPainted(false);
 		setLayoutPanel(gc);
+		
+		ok.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tarea.setNombre(nombreA.getText());
+				tarea.setAsignatura(asignaturaA.getText());
+				tarea.setDescripcion(descripcionA.getText());
+				if (realizadaCheck.isSelected()){
+					tarea.setRealizada(1);
+				}
+				else {
+					tarea.setRealizada(0);
+				}
+				TareaControl tc = new TareaControl(App.conn);
+				tc.insertTarea(tarea);
+				tc.insterUsuarioTarea(idUsuario, tarea);
+				cancel.doClick();
+			}
+		});
 		
 		cancel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
