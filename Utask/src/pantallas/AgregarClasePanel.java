@@ -5,11 +5,14 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.Vector;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -34,11 +37,12 @@ public class AgregarClasePanel extends JPanel {
 	private JTextArea examenesLinea;
 	private JButton ok;
 	private JButton cancel;
+	private int idClase;
 	private Vector<Clase> clases;
 
-	public AgregarClasePanel() {
+	public AgregarClasePanel(final JFrame agregarMateria, final JFrame agregarClase) {
 		setBackground(new Color(255, 255, 255));
-		setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+		setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
 		setLayout(new BorderLayout());
 		titulo = new JLabel(new ImageIcon("AgregarClase.png"));
 		inicio = new JLabel(new ImageIcon("Inicio.png"));
@@ -71,6 +75,15 @@ public class AgregarClasePanel extends JPanel {
 		cancel.setBorderPainted(false);
 		
 		setLayoutPanel();
+		
+		cancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarMateria.setEnabled(true);
+				agregarClase.setVisible(false);
+
+			}
+
+		});
 
 	}
 

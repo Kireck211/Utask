@@ -5,58 +5,75 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
+import baseDeDatos.beans.Materia;
+import baseDeDatos.beans.MateriaControl;
+
 public class AgregarMateriaPanel extends JPanel{
 	private JLabel titulo;
 	private JLabel nombre;
-	private JLabel color;
-	private JLabel hoursLeft;
-	private JLabel AssignmentLeft;
 	private JLabel horario;
 	private JTextArea nombreLinea;
-	private JTextArea colorLinea;
-	private JTextArea hourLinea;
-	private JTextArea assignLinea;
-	private JTextArea horarioLinea;
 	private JButton ok;
 	private JButton cancel;
+	private JButton mas;
+	private Materia materia;
 	
-public AgregarMateriaPanel() {
+public AgregarMateriaPanel(final JFrame agregarMateria, final JFrame agregarSemestre, final int idSemestre) {
 	setBackground(new Color(255, 255, 255));
-	setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+	setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
 	setLayout(new BorderLayout());
 	titulo = new JLabel(new ImageIcon("materia.png"));
-	color = new JLabel(new ImageIcon("color.png"));
 	nombre = new JLabel(new ImageIcon("nombree.png"));
-	hoursLeft = new JLabel(new ImageIcon("HorasRestantes.png"));
-	AssignmentLeft = new JLabel(new ImageIcon("ExamesRestantes.png"));
 	horario = new JLabel(new ImageIcon("horario.png"));
-	colorLinea = new JTextArea();
-	colorLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
-	hourLinea = new JTextArea();
-	hourLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
 	nombreLinea = new JTextArea();
 	nombreLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
-	assignLinea = new JTextArea();
-	assignLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
-	horarioLinea = new JTextArea();
-	horarioLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+	materia = new Materia();
+	mas = new JButton(new ImageIcon("mas.png"));
 	ok = new JButton(new ImageIcon("ok.png"));
 	cancel = new JButton(new ImageIcon("cancel.png"));
 	
+	mas.setContentAreaFilled(false);
 	ok.setContentAreaFilled(false);
 	cancel.setContentAreaFilled(false);
+	mas.setBorderPainted(false);
 	ok.setBorderPainted(false);
 	cancel.setBorderPainted(false);
 	
 	setLayoutPanel();
+	
+	mas.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			new AgregarClaseFrame(agregarMateria);
+		}
+	});
+	
+	ok.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			materia.setNombre(nombreLinea.getText());
+			MateriaControl mc = new MateriaControl(App.conn);
+			mc.insertMateria(materia);
+			mc.insertUsuarioMateria(idSemestre, materia);
+			cancel.doClick();
+		}
+	});
+	
+	cancel.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			agregarSemestre.setEnabled(true);
+			agregarMateria.setVisible(false);
+		}
+	});
 
 }
 public void setLayoutPanel(){
@@ -86,38 +103,6 @@ public void setLayoutPanel(){
 	add(nombreLinea, gc);
 
 	///////// Next row ///////
-	gc.gridy++;
-	gc.gridx = 0;
-	gc.ipadx = 0;
-	gc.insets = new Insets(0, 0, 0, 0);
-	add(color, gc);
-
-	gc.gridx = 1;
-	gc.ipadx = 200;
-	gc.insets = new Insets(0, 0, 0, 40);
-	add(colorLinea, gc);
-
-	gc.gridy++;
-	gc.gridx = 0;
-	gc.ipadx = 0;
-	gc.insets = new Insets(0, 0, 0, 0);
-	add(hoursLeft, gc);
-
-	gc.gridx = 1;
-	gc.ipadx = 200;
-	gc.insets = new Insets(0, 0, 0, 40);
-	add(hourLinea, gc);
-
-	gc.gridy++;
-	gc.gridx = 0;
-	gc.ipadx = 0;
-	gc.insets = new Insets(0, 0, 0, 0);
-	add(AssignmentLeft, gc);
-
-	gc.gridx = 1;
-	gc.ipadx = 200;
-	gc.insets = new Insets(0, 0, 0, 40);
-	add(assignLinea, gc);
 
 	gc.gridy++;
 	gc.gridx = 0;
@@ -126,9 +111,7 @@ public void setLayoutPanel(){
 	add(horario, gc);
 
 	gc.gridx = 1;
-	gc.ipadx = 200;
-	gc.insets = new Insets(0, 0, 0, 40);
-	add(horarioLinea, gc);
+	add(mas, gc);
 	
 	gc.gridy++;
 	gc.ipadx = 0;

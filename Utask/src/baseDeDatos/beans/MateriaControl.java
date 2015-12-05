@@ -13,6 +13,39 @@ public class MateriaControl {
 	public MateriaControl(Connection con) {
 		this.conn = con;
 	}
+	
+	public void insertUsuarioMateria(int idSemestre, Materia materia) {
+		if (conn == null)
+			return;
+		Statement statement = null;
+		String sql = null;
+		ResultSet rs = null;
+		try {
+			statement = conn.createStatement();
+			sql = "SELECT * FROM materia WHERE nombre = '" + materia.getNombre() +"'";
+			rs = statement.executeQuery(sql);
+			if (rs.next()) {
+				int idMateria = rs.getInt("idmateria");
+				sql = "INSERT INTO semestremateria (idsemestre,"+
+				"idmateria) "
+				+ "VALUES"
+				+ "(" + idSemestre + "," + idMateria+ ")";
+				statement.executeUpdate(sql);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			if (statement != null) {
+				try {
+					statement.close();
+				} catch (SQLException e) {
+
+				} finally {
+					sql = null;
+				}
+			}
+		}
+	}
 
 	public void insertMateria(Materia materia) {
 		if (conn == null)

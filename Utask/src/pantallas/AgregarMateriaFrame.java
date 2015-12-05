@@ -8,15 +8,18 @@ import javax.swing.JPanel;
 public class AgregarMateriaFrame extends JFrame{
 	private JPanel materia;
 	
-	public AgregarMateriaFrame() {
+	public AgregarMateriaFrame(JFrame agregarMateria,int idSemestre) {
+		
+		agregarMateria.setEnabled(false);
 
-		materia = new AgregarMateriaPanel();
+		materia = new AgregarMateriaPanel(this,agregarMateria,idSemestre);
 
 		setSize(700, 600);
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-//		setUndecorated(true);
+		setUndecorated(true);
+		
 		
 		setLayout(new BorderLayout());
 		add(materia);
