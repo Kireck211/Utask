@@ -33,7 +33,7 @@ public class TareasPanel extends JPanel{
 		editar.setContentAreaFilled(false);
 		editar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new EditarPersona().setVisible(true);;
+				new EditarPersona(ventana).setVisible(true);
 			}
 			
 		});
@@ -53,6 +53,10 @@ public class TareasPanel extends JPanel{
 		});
 		setLayoutPanel();
 	}
+	
+	/**
+	 * Genera el layout de la pantalla
+	 */
 	public void setLayoutPanel(){
 		setLayout(new GridBagLayout());
 

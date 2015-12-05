@@ -14,12 +14,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
 
-import baseDeDatos.beans.Clase;
-import baseDeDatos.beans.ClaseControl;
 import baseDeDatos.beans.Semestre;
 import baseDeDatos.beans.SemestreControl;
-import baseDeDatos.beans.Tarea;
-import baseDeDatos.beans.TareaControl;
+import calendar.MyDate;
 
 public class PlaneacionBoard extends JPanel {
 	private JButton semestres;
@@ -35,6 +32,7 @@ public class PlaneacionBoard extends JPanel {
 	public PlaneacionBoard(final MainFrame main, final int idUsuario){
 		this.idUsuario = idUsuario;
 		setBackground(new Color(255,255,255));
+
 		setAll();
 		quitarBordesBotones();
 		quitarFondo();
@@ -66,17 +64,18 @@ public class PlaneacionBoard extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if (semestre_profesor == 1){
 					new AgregarSemestreFrame(main, idUsuario);
+					
 				}
 				else {
 					new AgregarProfesorFrame(main);
 				}
-				/*new AgregarTareasFrame();
-				new AgregarExamenFrame();
-				new AgregarClaseFrame();
-				new AgregarMateriaFrame();*/
+				cargarTodo();
+				impresion();
 			}
 			
 		});
+		cargarTodo();
+		impresion();
 		
 	}
 	
@@ -85,8 +84,8 @@ public class PlaneacionBoard extends JPanel {
 		while(i<this.semestre.size()) {
 			Semestre semestre = this.semestre.get(i);
 			String nombre = semestre.getNombre();
-//			String asignatura = semestre.getAsignatura();
-//			String descripcion = semestre.getDescripcion();
+			MyDate inicio = semestre.getInicio();
+			MyDate fin = semestre.getFin();
 			boolean activo;
 			if (semestre.getActivo()==1){
 				activo = true;
@@ -94,14 +93,14 @@ public class PlaneacionBoard extends JPanel {
 			else {
 				activo = false;
 			}
-//			JLabel tarea_a= new JLabel("Nombre: "+ nombre.substring(0, 1).toUpperCase() + nombre.substring(1,nombre.length()) + "\tAsignatura: " + asignatura.substring(0, 1).toUpperCase() + asignatura.substring(1,asignatura.length()) + "\tDescripcion: " + descripcion.substring(0, 1).toUpperCase() + descripcion.substring(1,descripcion.length()) + "\tRealizada: " + realizada);
+			JLabel semestre_a = new JLabel("Nombre: " + nombre.substring(0, 1).toUpperCase() + nombre.substring(1,nombre.length()) + " Inicio: "+ inicio.toString() + " Fin: " + fin.toString() + " Activo:"+ activo);
 			GridBagConstraints gc = new GridBagConstraints();
 			gc.fill = GridBagConstraints.HORIZONTAL;
 			gc.gridx = 0;
 			gc.gridy = i;
 			
 			
-//			panelPlaneacion.add(tarea_a,gc);
+			panelPlaneacion.add(semestre_a,gc);
 			i++;
 		}
 	}

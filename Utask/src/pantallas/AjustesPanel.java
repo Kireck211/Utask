@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
@@ -18,8 +19,10 @@ public class AjustesPanel extends JPanel {
 	private JLabel title;
 	private JButton cerrar;
 	private JButton editar;
+	private JFrame ajustes;
 
 	public AjustesPanel(final MainFrame ventana) {
+		this.ajustes = ventana;
 		setBackground(new Color(255, 255, 255));
 		setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
 		setLayout(new BorderLayout());
@@ -33,7 +36,7 @@ public class AjustesPanel extends JPanel {
 		setLayoutPanel();
 		editar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				new EditarPersona().setVisible(true);;
+				new EditarPersona(ajustes).setVisible(true);;
 			}
 			
 		});

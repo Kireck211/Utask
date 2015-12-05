@@ -34,7 +34,7 @@ public class HeaderPanel extends JPanel {
 		
 		editar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				new EditarPersona().setVisible(true);;
+				new EditarPersona(ventana).setVisible(true);;
 			}
 			
 		});
