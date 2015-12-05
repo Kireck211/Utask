@@ -21,7 +21,7 @@ public class PlaneacionBoard extends JPanel {
 	private JPanel panelPlaneacion;
 	
 	
-	public PlaneacionBoard(final MainFrame main, int idUsuario){
+	public PlaneacionBoard(final MainFrame main, final int idUsuario){
 		setBackground(new Color(255,255,255));
 		setAll();
 		quitarBordesBotones();

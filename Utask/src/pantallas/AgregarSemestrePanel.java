@@ -82,14 +82,16 @@ public class AgregarSemestrePanel extends JPanel {
 					semestre.setActivo(1);
 				else
 					semestre.setActivo(0);
-				semestre.setInicio(new MyDate(inicioDia.getSelectedIndex(), inicioMes.getSelectedIndex(), inicioAnho.getSelectedIndex()));
-				semestre.setFin(new MyDate(finDia.getSelectedIndex(),finMes.getSelectedIndex(),finAnho.getSelectedIndex()));
+				int iniAnho = Calendar.getInstance().get(Calendar.YEAR) - inicioAnho.getSelectedIndex() + 1;
+				int fiAnho = Calendar.getInstance().get(Calendar.YEAR) - finAnho.getSelectedIndex() + 1;
+				semestre.setInicio(new MyDate(inicioDia.getSelectedIndex(), inicioMes.getSelectedIndex(), iniAnho));
+				semestre.setFin(new MyDate(finDia.getSelectedIndex(),finMes.getSelectedIndex(),fiAnho));
+				System.out.println(inicioAnho.getSelectedItem());
+				System.out.println(finAnho.getSelectedItem());
 				SemestreControl sc = new SemestreControl(App.conn);
 				sc.insertSemestre(semestre);
 				sc.insterUsuarioSemestre(idUsuario, semestre);
 				cancel.doClick();
-				
-				
 			}
 			
 		});
@@ -111,7 +113,7 @@ public class AgregarSemestrePanel extends JPanel {
 		String[] meses = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Octubre","Noviembre","Diciembre"};
 		Vector<String> anhos = new Vector();
 		Vector<String> dias = new Vector();
-		for(int i = Calendar.getInstance().get(Calendar.YEAR);i>=1950;i--){
+		for(int i = Calendar.getInstance().get(Calendar.YEAR)+1;i>=1950;i--){
 			anhos.addElement(((Integer) i).toString());
 		}
 		
@@ -136,6 +138,8 @@ public class AgregarSemestrePanel extends JPanel {
 		
 		inicioDia.setSelectedIndex((Calendar.getInstance().get(Calendar.DAY_OF_MONTH))-1);
 		finDia.setSelectedIndex((Calendar.getInstance().get(Calendar.DAY_OF_MONTH)));
+		inicioAnho.setSelectedIndex(0);
+		finAnho.setSelectedIndex(0);
 	}
 
 	public void setLayoutPanel() {

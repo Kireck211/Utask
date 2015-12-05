@@ -27,9 +27,11 @@ public class SemestreControl {
 			sql = "SELECT * FROM semestre WHERE nombre = '" + semestre.getNombre() +"'";
 			rs = statement.executeQuery(sql);
 			if (rs.next()) {
-				int idSemestre = rs.getInt("idSemestre");
-				sql = "INSERT INTO usuario-semestre(idUsuario, idSemestre) "
-				+ "VALUES (" + idUsuario + "," + idSemestre+ ")";
+				int idSemestre = rs.getInt("idsemestre");
+				sql = "INSERT INTO usuariosemestre (idusuario,"+
+				"idsemestre) "
+				+ "VALUES"
+				+ "(" + idUsuario + "," + idSemestre+ ")";
 				statement.executeUpdate(sql);
 			}
 		} catch (SQLException e) {
@@ -58,7 +60,7 @@ public class SemestreControl {
 					+ "VALUES ('" + semestre.getNombre() + "'," + semestre.getInicio().getDay() + ","
 					+ semestre.getInicio().getMonth() + "," + semestre.getInicio().getYear() + ","
 					+ semestre.getFin().getDay() + "," + semestre.getFin().getMonth() + ","
-					+ semestre.getFin().getYear() + ",'" + semestre.getActivo() + "')";
+					+ semestre.getFin().getYear() + "," + semestre.getActivo() + ")";
 			statement.executeUpdate(sql);
 		} catch (SQLException e) {
 			e.printStackTrace();
