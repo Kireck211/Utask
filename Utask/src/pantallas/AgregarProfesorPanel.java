@@ -5,10 +5,13 @@ import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -26,9 +29,47 @@ public class AgregarProfesorPanel extends JPanel {
 	private JButton ok;
 	private JButton cancel;
 	
-public AgregarProfesorPanel() {
+	public AgregarProfesorPanel(final JFrame agregarClase, final JFrame agregarProfesor, int id) {
+		setBackground(new Color(255, 255, 255));
+		setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
+		setLayout(new BorderLayout());
+		titulo = new JLabel(new ImageIcon("AgregarProfesor.png"));
+		email = new JLabel(new ImageIcon("email.png"));
+		nombre = new JLabel(new ImageIcon("nombree.png"));
+		telefono = new JLabel(new ImageIcon("telefono.png"));
+		departamento = new JLabel(new ImageIcon("departamento.png"));
+		emailLinea = new JTextArea();
+		emailLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+		telefonoLinea = new JTextArea();
+		telefonoLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+		nombreLinea = new JTextArea();
+		nombreLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+		departamentoLinea = new JTextArea();
+		departamentoLinea.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+		ok = new JButton(new ImageIcon("ok.png"));
+		cancel = new JButton(new ImageIcon("cancel.png"));
+		
+		ok.setContentAreaFilled(false);
+		cancel.setContentAreaFilled(false);
+		ok.setBorderPainted(false);
+		cancel.setBorderPainted(false);
+		
+		cancel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				agregarClase.setEnabled(true);
+				agregarProfesor.setVisible(false);
+			}
+		});
+		
+		
+		
+		setLayoutPanel();
+
+	}
+	
+public AgregarProfesorPanel(final JFrame main, final JFrame agregarProfesor) {
 	setBackground(new Color(255, 255, 255));
-	setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, Color.GRAY));
+	setBorder(BorderFactory.createMatteBorder(1, 1, 1, 1, Color.GRAY));
 	setLayout(new BorderLayout());
 	titulo = new JLabel(new ImageIcon("AgregarProfesor.png"));
 	email = new JLabel(new ImageIcon("email.png"));
@@ -51,6 +92,14 @@ public AgregarProfesorPanel() {
 	ok.setBorderPainted(false);
 	cancel.setBorderPainted(false);
 	
+	cancel.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			main.setEnabled(true);
+			agregarProfesor.setVisible(false);
+		}
+		
+	});
+	
 	setLayoutPanel();
 
 }
@@ -61,6 +110,7 @@ public void setLayoutPanel(){
 	gc.weightx = 5;
 	gc.weighty = 5;
 	gc.gridx = 0;
+	gc.gridwidth = 2;
 	gc.gridy = 0;
 	gc.anchor= GridBagConstraints.CENTER;
 	add(titulo, gc);
