@@ -31,6 +31,7 @@ public class InicioSesionPanel extends JPanel {
 	private JButton registrarse;
 	private JButton olvidar;
 	private InicioSesionFrame ventana;
+	private Usuario usuario;
 
 	public InicioSesionPanel(InicioSesionFrame ventana) {
 		setBackground(Color.WHITE);
@@ -50,8 +51,9 @@ public class InicioSesionPanel extends JPanel {
 		olvidar = new JButton(new ImageIcon("Olvidar.png"));
 		olvidar.setBorder(null);
 		olvidar.setContentAreaFilled(false);
-		setLayoutInicio();
+		usuario = new Usuario();
 		
+		setLayoutInicio();
 		setActionListenersButtons();
 		this.ventana = ventana;
 	}
@@ -68,7 +70,6 @@ public class InicioSesionPanel extends JPanel {
 		inicio.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent arg0) {
 				if (nameArea.getText().length()!=0 && contrasenhaArea.getText().length()!=0) {
-					Usuario usuario = new Usuario();
 					usuario.setNickName(nameArea.getText());
 					usuario.setContrasenha(contrasenhaArea.getText());
 					if(uc.buscarUsuario(usuario)){
@@ -109,7 +110,7 @@ public class InicioSesionPanel extends JPanel {
 	
 	public void desplegarPantallaMain() {
 		ventana.setVisible(false);
-		new MainFrame();
+		new MainFrame(usuario);
 	}
 
 	public void setLayoutInicio() {

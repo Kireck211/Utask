@@ -4,10 +4,14 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+
+import baseDeDatos.beans.Usuario;
+import baseDeDatos.beans.UsuarioControl;
 
 public class MainFrame extends JFrame {
 	private JPanel head[] = new JPanel[5];
@@ -15,9 +19,10 @@ public class MainFrame extends JFrame {
 	private JPanel board[] = new JPanel[5];
 	private JPanel board_relative;
 	private JPanel header;
-	
 
-	public MainFrame() {
+	public MainFrame(Usuario usuario) {
+		
+		
 
 		getContentPane().setBackground(new Color(255, 255, 255));
 		setAll();
@@ -30,6 +35,9 @@ public class MainFrame extends JFrame {
 		setExtendedState(JFrame.MAXIMIZED_BOTH);
 		setMinimumSize(new Dimension(1100, 700));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
+		
 		setVisible(true);
 	}
 	

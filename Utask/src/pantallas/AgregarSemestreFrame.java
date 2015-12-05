@@ -16,7 +16,6 @@ private JPanel semestre;
 		setResizable(false);
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-//		setUndecorated(true);
 		
 		setLayout(new BorderLayout());
 		add(semestre);

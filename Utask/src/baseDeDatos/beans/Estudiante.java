@@ -1,7 +1,5 @@
 package baseDeDatos.beans;
 
-import calendar.MyDateTime;
-
 public class Estudiante {
 	
 	private int idEstudiante;

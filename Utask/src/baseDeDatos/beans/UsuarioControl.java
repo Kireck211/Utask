@@ -48,8 +48,8 @@ public class UsuarioControl {
 			statement = conn.createStatement();
 			sql = "SELECT * FROM usuario WHERE nickname = '" + usuario.getNickName() + "'";
 			rs = statement.executeQuery(sql);
-			System.out.println(4 + "" + usuario.getNickName() + 4);
 			if (rs.next()) {
+				usuario.setIdUsuario(rs.getInt("idusuario"));
 				return true;
 			} else {
 				return false;
