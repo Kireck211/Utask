@@ -16,6 +16,10 @@ public class AjustesBoard extends JPanel {
 	private JButton horario;
 	private JButton preestablecido;
 	private JButton botones[];
+	private JPanel panelAjustesExamenes;
+	private JPanel panelAjustesHorario;
+	private JPanel panelAjustesTareas;
+	private JPanel panelAjustesPreestablecido;
 
 	public AjustesBoard() {
 		setBackground(new Color(255,255,255));

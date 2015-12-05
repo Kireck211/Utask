@@ -15,10 +15,10 @@ import javax.swing.JTextArea;
 public class PlaneacionBoard extends JPanel {
 	private JButton semestres;
 	private JButton profesores;
-	private JButton actual;
 	private JButton mas;
 	private int semestre_profesor;
 	private JTextArea semestres_prof;
+	private JPanel panelPlaneacion;
 	
 	
 	public PlaneacionBoard(){
@@ -26,8 +26,13 @@ public class PlaneacionBoard extends JPanel {
 		setAll();
 		quitarBordesBotones();
 		quitarFondo();
+		
+		panelPlaneacion = new JPanel();
+		
 		setLayoutPanel();
 		semestres.setSelected(true);
+		
+		
 		
 		semestres.addActionListener(new ActionListener(){
 			public void actionPerformed(ActionEvent e) {
@@ -64,21 +69,18 @@ public class PlaneacionBoard extends JPanel {
 	public void quitarBordesBotones() {
 		semestres.setBorder(null);
 		profesores.setBorder(null);
-		actual.setBorder(null);
 		mas.setBorder(null);
 	}
 	
 	public void quitarFondo() {
 		semestres.setContentAreaFilled(false);
 		profesores.setContentAreaFilled(false);
-		actual.setContentAreaFilled(false);
 		mas.setContentAreaFilled(false);
 	}
 	
 	public void setAll() {
 		semestres = new JButton(new ImageIcon("Semestres.png"));
 		profesores = new JButton(new ImageIcon("Prof.png"));
-		actual = new JButton(new ImageIcon("actual.png"));
 		mas = new JButton(new ImageIcon("mas.png"));
 		semestres_prof = new JTextArea();
 		
@@ -109,20 +111,25 @@ public class PlaneacionBoard extends JPanel {
 		add(mas,gc);
 		
 		//////////////////////////////////
-		gc.gridy++;
+		/*gc.gridy++;
 		gc.gridx=0;
 		gc.weightx = 1; /////// Lo puse menor par que solo ocupara 1 de 5 de espacio
 		gc.anchor = GridBagConstraints.LINE_START; ////// Se pone al principio 
 		gc.insets = new Insets(0, -5, 0, 0);  ////// Se pueden poner valores negativos, y hace el efecto al reves
 //		gc.fill = GridBagConstraints.EAST;
 
-		add(actual,gc);
-		/////////////////////////////////
+		///////////////////////////////// */
+		
 
 		
+		//////////////////////////////
+		
+		gc.gridx=0;
 		gc.gridy++;
+		gc.fill = GridBagConstraints.HORIZONTAL;
 		gc.gridwidth = 2;
-		add(semestres_prof,gc);
+		add(panelPlaneacion,gc);
+		
 	}
 	
 	

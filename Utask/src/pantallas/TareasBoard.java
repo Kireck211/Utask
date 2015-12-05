@@ -17,6 +17,7 @@ public class TareasBoard extends JPanel{
 	private JButton fecha;
 	private JButton asignatura;
 	private JButton mas;
+	private JPanel panelTareas;
 	
 	public TareasBoard() {
 	
@@ -36,6 +37,8 @@ public class TareasBoard extends JPanel{
 	asignatura.setContentAreaFilled(false);
 	mas.setBorder(null);
 	mas.setContentAreaFilled(false);
+	
+	panelTareas = new JPanel();
 	
 	mas.addActionListener(new ActionListener(){
 		public void actionPerformed(ActionEvent e) {
@@ -79,5 +82,13 @@ public class TareasBoard extends JPanel{
 		gc.gridx=1;
 		gc.fill = GridBagConstraints.HORIZONTAL;
 		add(asignatura,gc);
+		
+		gc.gridx=0;
+		gc.gridy++;
+		gc.fill = GridBagConstraints.HORIZONTAL;
+		gc.gridwidth = 2;
+		gc.insets = new Insets(0, 0, 0, 30);
+		add(panelTareas,gc);
+		
 	}
 }
